@@ -21,16 +21,43 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus('sending');
-    // Simulate sending email
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Nytt meddelande från ${formData.name} (slundberg.com)`,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        console.error('Web3Forms Error:', result);
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Submit Error:', error);
+      setStatus('error');
+    }
   };
 
   const contactLinks = [
@@ -216,6 +243,22 @@ export default function Contact() {
                     className="form-input"
                   />
                 </div>
+
+                {status === 'error' && (
+                  <div style={{
+                    color: '#ef4444',
+                    fontSize: '0.85rem',
+                    background: 'rgba(239, 68, 68, 0.1)',
+                    border: '1px solid rgba(239, 68, 68, 0.2)',
+                    borderRadius: '6px',
+                    padding: '0.75rem',
+                    marginTop: '0.5rem',
+                    textAlign: 'center',
+                    fontWeight: 500,
+                  }}>
+                    Ett fel uppstod. Kontrollera din anslutning/inställningar och försök igen.
+                  </div>
+                )}
 
                 <button 
                   type="submit" 
