@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Projects() {
   const [activeRagTab, setActiveRagTab] = useState<'local' | 'azure'>('local');
+  const { t } = useLanguage();
 
   return (
     <section id="projects" className="section" style={{ background: 'rgba(255, 255, 255, 0.01)' }}>
       <div className="container">
         <h2 className="section-title">
-          Utvalda <span>Projekt</span>
+          {t.projects.title}<span>{t.projects.titleSpan}</span>
         </h2>
 
         <div style={{
@@ -23,36 +25,36 @@ export default function Projects() {
               <div className="project-graphic-side game-bg">
                 <div className="game-overlay">
                   <Gamepad2 size={48} className="game-icon-glow" />
-                  <span className="game-status-badge">UNDER UTVECKLING</span>
+                  <span className="game-status-badge">{t.projects.statusDeveloping}</span>
                 </div>
               </div>
               
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">Spelutveckling</span>
-                  <span className="tag">Nordstern Studio</span>
-                  <span className="tag">Northack Group</span>
+                  <span className="tag tag-accent">{t.projects.game.tagSpel}</span>
+                  <span className="tag">{t.projects.game.tagStudio}</span>
+                  <span className="tag">{t.projects.game.tagGroup}</span>
                 </div>
 
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-                  No Final Run
+                  {t.projects.game.title}
                 </h3>
 
                 <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
-                  Roll: Game Director
+                  {t.projects.roleLabel}{t.projects.game.role}
                 </h4>
 
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Som Game Director leder jag den kreativa visionen och speldesignen för <strong>No Final Run</strong>, ett spännande spelprojekt som utvecklas under Nordstern (en understudio till Northack gaming studio). 
+                  {t.projects.game.desc1}
                 </p>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Projektet involverar samordning av utvecklingsteam, spelmekanikdesign, nivådesign och berättande. Vi bygger en fängslande och dynamisk spelupplevelse med fokus på tight spelkänsla, hög prestanda och en unik estetisk stil.
+                  {t.projects.game.desc2}
                 </p>
 
                 <div style={{ marginTop: '0.5rem' }}>
                   <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-                    Mina ansvarsområden:
+                    {t.projects.responsibilitiesLabel}
                   </h5>
                   <ul style={{ 
                     listStyle: 'none', 
@@ -63,16 +65,16 @@ export default function Projects() {
                     color: 'var(--color-text-secondary)'
                   }} className="skills-list-grid">
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> Kreativ ledning & speldesign
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.game.resp1}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> Agil projektledning & teamkoordinering
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.game.resp2}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> Spelmekanik & prototyping
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.game.resp3}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> Systemarkitektur & verktygsdesign
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.game.resp4}
                     </li>
                   </ul>
                 </div>
@@ -86,21 +88,21 @@ export default function Projects() {
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">Examensarbete</span>
-                  <span className="tag">AI & Machine Learning</span>
-                  <span className="tag">Multimodal RAG</span>
+                  <span className="tag tag-accent">{t.projects.rag.tagThesis}</span>
+                  <span className="tag">{t.projects.rag.tagAi}</span>
+                  <span className="tag">{t.projects.rag.tagRag}</span>
                 </div>
 
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-                  Multimodal RAG för Kassasystem
+                  {t.projects.rag.title}
                 </h3>
                 
                 <h4 style={{ fontSize: '1.05rem', color: 'var(--color-primary)', fontWeight: 600 }}>
-                  En komparativ analys: Lokal Open Source vs. Azure Cloud
+                  {t.projects.rag.subtitle}
                 </h4>
 
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Detta examensarbete (OPA 24) undersökte hur en multimodal RAG-pipeline (bildbaserad produktregistrering via kamera) bäst implementeras i ett kassasystem. Studien jämförde två distinkta teknologistabbar gällande komplexitet, latency och driftskostnad.
+                  {t.projects.rag.desc}
                 </p>
 
                 {/* Interactive Tech Comparison Section */}
@@ -122,13 +124,13 @@ export default function Projects() {
                       onClick={() => setActiveRagTab('local')}
                       className={`tab-btn ${activeRagTab === 'local' ? 'active' : ''}`}
                     >
-                      <Server size={14} /> Lokal Open Source
+                      <Server size={14} /> {t.projects.rag.tabLocal}
                     </button>
                     <button 
                       onClick={() => setActiveRagTab('azure')}
                       className={`tab-btn ${activeRagTab === 'azure' ? 'active' : ''}`}
                     >
-                      <Cloud size={14} /> Azure Enterprise
+                      <Cloud size={14} /> {t.projects.rag.tabAzure}
                     </button>
                   </div>
 
@@ -136,7 +138,7 @@ export default function Projects() {
                   {activeRagTab === 'local' ? (
                     <div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.75rem' }}>
-                        En helt lokal, integritetsvänlig stack som körs på egen hårdvara eller lätta servrar.
+                        {t.projects.rag.tabLocalDesc}
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                         <span className="mini-tag">FastAPI</span>
@@ -149,7 +151,7 @@ export default function Projects() {
                   ) : (
                     <div>
                       <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', marginBottom: '0.75rem' }}>
-                        En kraftfull, skalbar och managerad molnmiljö för enterprise-behov.
+                        {t.projects.rag.tabAzureDesc}
                       </p>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                         <span className="mini-tag">Azure Functions</span>
@@ -173,8 +175,8 @@ export default function Projects() {
                     alignItems: 'center',
                     marginTop: '1rem',
                   }}>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 'bold' }}>IMAGE TO EMBEDDING</span>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--color-text-secondary)' }}>Vector DB lookup</span>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 'bold' }}>{t.projects.rag.diagramTitle}</span>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-text-secondary)' }}>{t.projects.rag.diagramSub}</span>
                   </div>
                 </div>
               </div>
@@ -195,21 +197,21 @@ export default function Projects() {
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">Fullstack</span>
-                  <span className="tag">Mobil, Webb & Desktop</span>
-                  <span className="tag">Kassasystem</span>
+                  <span className="tag tag-accent">{t.projects.pos.tagFullstack}</span>
+                  <span className="tag">{t.projects.pos.tagCross}</span>
+                  <span className="tag">{t.projects.pos.tagPos}</span>
                 </div>
 
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-                  PNS-Free
+                  {t.projects.pos.title}
                 </h3>
                 
                 <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
-                  Open-source POS-system för restauranger och butiker
+                  {t.projects.pos.subtitle}
                 </h4>
 
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Ett modernt, cross-platform Point of Sale (POS) system utvecklat med <strong>Flutter och Dart</strong>. Systemet erbjuder en offline-first-upplevelse med snabb lokal lagring och ett responsivt gränssnitt lämpat för restauranger, caféer och mindre detaljhandel.
+                  {t.projects.pos.desc}
                 </p>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -222,7 +224,7 @@ export default function Projects() {
 
                 <div style={{ marginTop: '0.5rem' }}>
                   <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>
-                    Huvudfunktioner:
+                    {t.projects.featuresLabel}
                   </h5>
                   <ul style={{ 
                     listStyle: 'none', 
@@ -233,16 +235,16 @@ export default function Projects() {
                     color: 'var(--color-text-secondary)'
                   }} className="skills-list-grid">
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> Beställnings- & orderhantering i realtid
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat1}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> Produktkatalog med kategorier och prissättning
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat2}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> Offline-stöd med Hive lokal databas
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat3}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> Cross-platform: Android, iOS, Webb och Desktop
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat4}
                     </li>
                   </ul>
                 </div>

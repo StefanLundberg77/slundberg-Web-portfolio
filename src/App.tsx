@@ -5,11 +5,12 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { LanguageProvider } from './context/LanguageContext';
 import './App.css';
 
 function App() {
   return (
-    <>
+    <LanguageProvider>
       {/* Premium background gradient blobs */}
       <div className="bg-gradients">
         <div className="gradient-blob blob-1"></div>
@@ -31,7 +32,7 @@ function App() {
 
       {/* Footer */}
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }
 

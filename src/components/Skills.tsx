@@ -1,13 +1,16 @@
 import { Compass, Code2, BrainCircuit, Cloud, Check } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Skills() {
+  const { t } = useLanguage();
+
   const skillCategories = [
     {
       icon: <Compass size={24} color="#06b6d4" />,
-      title: 'Ledarskap & Spel',
+      title: t.skills.catGame,
       skills: [
         'Game Direction',
-        'Speldesign',
+        'Speldesign / Game Design',
         'Agil projektledning',
         'Teamkoordinering',
         'Spelprototyping',
@@ -16,7 +19,7 @@ export default function Skills() {
     },
     {
       icon: <Code2 size={24} color="#6366f1" />,
-      title: 'Systemutveckling & OOP',
+      title: t.skills.catDev,
       skills: [
         'Python',
         'Flutter & Dart',
@@ -28,7 +31,7 @@ export default function Skills() {
     },
     {
       icon: <BrainCircuit size={24} color="#a855f7" />,
-      title: 'AI & RAG-system',
+      title: t.skills.catAi,
       skills: [
         'Multimodal RAG',
         'PydanticAI',
@@ -40,7 +43,7 @@ export default function Skills() {
     },
     {
       icon: <Cloud size={24} color="#10b981" />,
-      title: 'Molntjänster & DevOps',
+      title: t.skills.catCloud,
       skills: [
         'Microsoft Azure',
         'Microsoft Fabric',
@@ -56,7 +59,7 @@ export default function Skills() {
     <section id="skills" className="section">
       <div className="container">
         <h2 className="section-title">
-          Mina <span>Kompetenser</span>
+          {t.skills.title}<span>{t.skills.titleSpan}</span>
         </h2>
 
         <div className="grid grid-2" style={{ gap: '2rem' }}>

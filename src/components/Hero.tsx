@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { BrainCircuit, ArrowDown } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -196,7 +198,7 @@ export default function Hero() {
             fontFamily: 'var(--font-heading)',
           }}>
             <BrainCircuit size={14} />
-            <span>Tillgänglig för nya utmaningar</span>
+            <span>{t.hero.status}</span>
           </div>
 
           <h1 style={{
@@ -205,7 +207,7 @@ export default function Hero() {
             lineHeight: 1.1,
             marginBottom: '1.5rem',
           }}>
-            Stefan Lundberg
+            {t.hero.title}
           </h1>
 
           <h2 style={{
@@ -219,9 +221,9 @@ export default function Hero() {
             alignItems: 'center',
             gap: '0.5rem 1rem',
           }}>
-            <span>Game Director @ Nordstern</span>
+            <span>{t.hero.roleGame}</span>
             <span style={{ fontSize: '1rem', color: 'var(--color-text-secondary)' }}>|</span>
-            <span style={{ color: '#a5b4fc' }}>Systemutvecklare & AI-integratör</span>
+            <span style={{ color: '#a5b4fc' }}>{t.hero.roleDev}</span>
           </h2>
 
           <p style={{
@@ -230,15 +232,15 @@ export default function Hero() {
             marginBottom: '2.5rem',
             maxWidth: '600px',
           }}>
-            Jag bygger moderna, robusta mjukvarusystem med en passion för spelutveckling, objektorienterad systemarkitektur och integrering av intelligenta AI-lösningar. Genom min utbildning och mitt arbete förenar jag kreativt ledarskap med djup teknisk kompetens.
+            {t.hero.desc}
           </p>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
             <a href="#projects" className="btn btn-primary">
-              Se projekt
+              {t.hero.btnProjects}
             </a>
             <a href="#contact" className="btn btn-secondary">
-              Kontakta mig
+              {t.hero.btnContact}
             </a>
           </div>
         </div>
@@ -262,7 +264,7 @@ export default function Hero() {
           animation: 'bounce 2s infinite',
         }}
       >
-        <span>Läs mer</span>
+        <span>{t.hero.scrollDown}</span>
         <ArrowDown size={16} />
       </a>
 

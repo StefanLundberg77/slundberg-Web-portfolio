@@ -1,21 +1,24 @@
 import { Code2, GraduationCap, Compass } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
   const cards = [
     {
       icon: <GraduationCap size={24} color="#6366f1" />,
-      title: 'Utbildning & AI',
-      desc: 'Projektorienterad programmering med inriktning AI. Utbildningen (OPA 24) fokuserade på modern systemutveckling, OOP, databaser samt avancerade AI-integrationer såsom Retrieval-Augmented Generation (RAG).',
+      title: t.about.card1Title,
+      desc: t.about.card1Desc,
     },
     {
       icon: <Compass size={24} color="#06b6d4" />,
-      title: 'Game Direction',
-      desc: 'Som Game Director på Nordstern (del av Northack) leder jag visionen, speldesignen och samordningen för vårt nuvarande spelprojekt "No Final Run". Jag kombinerar konstnärligt berättande med strukturerad systemdesign.',
+      title: t.about.card2Title,
+      desc: t.about.card2Desc,
     },
     {
       icon: <Code2 size={24} color="#a855f7" />,
-      title: 'Teknisk Filosofi',
-      desc: 'Jag värdesätter ren kod, modulär arkitektur och starka OOP-principer. Oavsett om det är Python-kod för AI-pipelines, Dart/Flutter för frontend eller spelmotorarkitektur, strävar jag efter skalbarhet och enkelhet.',
+      title: t.about.card3Title,
+      desc: t.about.card3Desc,
     },
   ];
 
@@ -23,7 +26,7 @@ export default function About() {
     <section id="about" className="section">
       <div className="container">
         <h2 className="section-title">
-          Vem är <span>Stefan?</span>
+          {t.about.title}<span>{t.about.titleSpan}</span>
         </h2>
 
         <div style={{
@@ -44,19 +47,19 @@ export default function About() {
               fontFamily: 'var(--font-heading)',
               color: 'var(--color-text-primary)',
             }}>
-              Kreativ ledare som älskar komplex mjukvarudesign
+              {t.about.subtitle}
             </h3>
             
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Min resa kombinerar två spännande världar: det kreativa ledarskapet inom spelbranschen och den logiska precisionen inom systemutveckling. Som <strong>Game Director på Nordstern</strong> leder jag spelvisionen och teamet i utvecklingen av <em>No Final Run</em>. Det handlar om att koordinera grafik, design, mekanik och kod till en sömlös helhet.
+              {t.about.p1}
             </p>
             
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Parallellt har jag slutfört min utbildning inom <strong>projektorienterad systemutveckling med inriktning AI</strong> (klass OPA 24). Där har jag fördjupat mig i objektorienterad programmering, avancerade API-arkitekturer och hur man integrerar AI-modeller (både lokala open-source-modeller och molnbaserade enterpriselösningar) i affärssystem.
+              {t.about.p2}
             </p>
 
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Denna dualitet gör att jag förstår hela processen — från produktvision och teamledning till underliggande databaser, API:er och maskininlärnings-pipelines.
+              {t.about.p3}
             </p>
           </div>
 

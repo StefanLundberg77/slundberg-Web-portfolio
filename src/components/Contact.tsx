@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Send, CheckCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Github = ({ size = 20 }: { size?: number }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -18,6 +19,7 @@ const Linkedin = ({ size = 20 }: { size?: number }) => (
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const { t } = useLanguage();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,7 +36,7 @@ export default function Contact() {
   const contactLinks = [
     {
       icon: <Mail size={20} />,
-      label: 'E-post',
+      label: t.contact.infoEmail,
       value: 'stefan@slundberg.com',
       href: 'mailto:stefan@slundberg.com'
     },
@@ -56,7 +58,7 @@ export default function Contact() {
     <section id="contact" className="section" style={{ paddingBottom: '8rem' }}>
       <div className="container">
         <h2 className="section-title">
-          Hör gärna <span>av dig</span>
+          {t.contact.title}<span>{t.contact.titleSpan}</span>
         </h2>
 
         <div style={{
@@ -74,11 +76,11 @@ export default function Contact() {
               fontFamily: 'var(--font-heading)',
               color: 'var(--color-text-primary)'
             }}>
-              Låt oss bygga något fantastiskt tillsammans!
+              {t.contact.subtitle}
             </h3>
             
             <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Jag är öppen för heltidsroller, frilansuppdrag och intressanta samarbetsprojekt. Om du letar efter en systemutvecklare med djup förståelse för AI-integrationer, eller en kreativ Game Director som kan hålla ihop komplexa projekt, tveka inte att skicka ett meddelande.
+              {t.contact.desc}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '1rem' }}>
@@ -149,24 +151,24 @@ export default function Contact() {
                   <CheckCircle size={32} />
                 </div>
                 <h4 style={{ fontSize: '1.4rem', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>
-                  Meddelande skickat!
+                  {t.contact.successTitle}
                 </h4>
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem' }}>
-                  Tack för att du hörde av dig, Stefan kommer att svara så snart som möjligt.
+                  {t.contact.successDesc}
                 </p>
                 <button 
                   onClick={() => setStatus('idle')}
                   className="btn btn-secondary"
                   style={{ marginTop: '1.5rem', padding: '0.5rem 1.5rem' }}
                 >
-                  Skicka ett till
+                  {t.contact.successBtn}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label htmlFor="name" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
-                    Namn
+                    {t.contact.labelName}
                   </label>
                   <input 
                     type="text" 
@@ -175,7 +177,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     disabled={status === 'sending'}
-                    placeholder="Ditt namn"
+                    placeholder={t.contact.placeholderName}
                     style={inputStyle}
                     className="form-input"
                   />
@@ -183,7 +185,7 @@ export default function Contact() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label htmlFor="email" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
-                    E-postadress
+                    {t.contact.labelEmail}
                   </label>
                   <input 
                     type="email" 
@@ -192,7 +194,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     disabled={status === 'sending'}
-                    placeholder="din.epost@doman.se"
+                    placeholder={t.contact.placeholderEmail}
                     style={inputStyle}
                     className="form-input"
                   />
@@ -200,7 +202,7 @@ export default function Contact() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label htmlFor="message" style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--color-text-secondary)' }}>
-                    Meddelande
+                    {t.contact.labelMessage}
                   </label>
                   <textarea 
                     id="message"
@@ -209,7 +211,7 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     disabled={status === 'sending'}
-                    placeholder="Skriv ditt meddelande här..."
+                    placeholder={t.contact.placeholderMessage}
                     style={{ ...inputStyle, resize: 'vertical' }}
                     className="form-input"
                   />
@@ -226,10 +228,10 @@ export default function Contact() {
                   }}
                 >
                   {status === 'sending' ? (
-                    'Skickar...'
+                    t.contact.btnSending
                   ) : (
                     <>
-                      Skicka meddelande <Send size={16} />
+                      {t.contact.btnSend} <Send size={16} />
                     </>
                   )}
                 </button>

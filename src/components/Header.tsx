@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, BrainCircuit } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,11 +16,11 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: 'Hem', href: '#home' },
-    { label: 'Om mig', href: '#about' },
-    { label: 'Projekt', href: '#projects' },
-    { label: 'Kompetens', href: '#skills' },
-    { label: 'Kontakt', href: '#contact' },
+    { label: t.nav.home, href: '#home' },
+    { label: t.nav.about, href: '#about' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.skills, href: '#skills' },
+    { label: t.nav.contact, href: '#contact' },
   ];
 
   return (
@@ -65,55 +67,115 @@ export default function Header() {
           </span>
         </a>
 
-        {/* Desktop Nav */}
-        <nav style={{
-          display: 'none',
-        }} className="desktop-menu">
-          <ul style={{
-            display: 'flex',
-            listStyle: 'none',
-            gap: '2.5rem',
-            alignItems: 'center',
-          }}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a 
-                  href={link.href}
-                  style={{
-                    fontSize: '0.95rem',
-                    fontWeight: 500,
-                    color: 'var(--color-text-secondary)',
-                    position: 'relative',
-                    padding: '0.25rem 0',
-                  }}
-                  className="nav-link-hover"
-                >
-                  {link.label}
+        {/* Right side controls */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1.5rem',
+        }}>
+          {/* Desktop Nav */}
+          <nav style={{
+            display: 'none',
+          }} className="desktop-menu">
+            <ul style={{
+              display: 'flex',
+              listStyle: 'none',
+              gap: '2rem',
+              alignItems: 'center',
+            }}>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a 
+                    href={link.href}
+                    style={{
+                      fontSize: '0.95rem',
+                      fontWeight: 500,
+                      color: 'var(--color-text-secondary)',
+                      position: 'relative',
+                      padding: '0.25rem 0',
+                    }}
+                    className="nav-link-hover"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
+                <a href="#contact" className="btn btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}>
+                  {t.header.hireMe}
                 </a>
               </li>
-            ))}
-            <li>
-              <a href="#contact" className="btn btn-primary" style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem' }}>
-                Anlita mig
-              </a>
-            </li>
-          </ul>
-        </nav>
+            </ul>
+          </nav>
 
-        {/* Mobile menu toggle */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--color-text-primary)',
-            cursor: 'pointer',
-            padding: '0.25rem',
-          }}
-          className="mobile-menu-toggle"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Premium Language Toggle Button */}
+          <div style={{
+            display: 'inline-flex',
+            background: 'rgba(255, 255, 255, 0.03)',
+            border: '1px solid var(--border-color)',
+            borderRadius: '20px',
+            padding: '2px',
+            alignItems: 'center',
+            position: 'relative',
+            zIndex: 10,
+          }}>
+            <button 
+              onClick={() => setLanguage('sv')}
+              aria-label="Svenska"
+              style={{
+                background: language === 'sv' ? 'var(--color-primary)' : 'transparent',
+                border: 'none',
+                color: language === 'sv' ? 'white' : 'var(--color-text-secondary)',
+                borderRadius: '18px',
+                padding: '0.25rem 0.6rem',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'var(--transition-smooth)',
+                boxShadow: language === 'sv' ? '0 2px 8px rgba(99, 102, 241, 0.4)' : 'none',
+              }}
+            >
+              SV
+            </button>
+            <button 
+              onClick={() => setLanguage('en')}
+              aria-label="English"
+              style={{
+                background: language === 'en' ? 'var(--color-primary)' : 'transparent',
+                border: 'none',
+                color: language === 'en' ? 'white' : 'var(--color-text-secondary)',
+                borderRadius: '18px',
+                padding: '0.25rem 0.6rem',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+                transition: 'var(--transition-smooth)',
+                boxShadow: language === 'en' ? '0 2px 8px rgba(99, 102, 241, 0.4)' : 'none',
+              }}
+            >
+              EN
+            </button>
+          </div>
+
+          {/* Mobile menu toggle */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--color-text-primary)',
+              cursor: 'pointer',
+              padding: '0.25rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            className="mobile-menu-toggle"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -153,12 +215,12 @@ export default function Header() {
             className="btn btn-primary"
             style={{ justifyContent: 'center' }}
           >
-            Anlita mig
+            {t.header.hireMe}
           </a>
         </div>
       )}
 
-      {/* CSS specific to Header, injected as style block for portability and clean scoping */}
+      {/* CSS specific to Header */}
       <style>{`
         @media (min-width: 768px) {
           .desktop-menu {
@@ -177,7 +239,6 @@ export default function Header() {
           height: 2px;
           bottom: 0;
           left: 0;
-          background-gradient: linear-gradient(90deg, var(--color-primary), var(--color-accent));
           background-color: var(--color-accent);
           transform-origin: bottom right;
           transition: transform 0.25s ease-out;

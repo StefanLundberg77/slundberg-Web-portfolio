@@ -1,7 +1,9 @@
 import { BrainCircuit } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer style={{
@@ -47,7 +49,7 @@ export default function Footer() {
           color: 'var(--color-text-secondary)',
           textAlign: 'center',
         }}>
-          &copy; {currentYear} Stefan Lundberg. Alla rättigheter förbehållna.
+          &copy; {currentYear} {t.footer.rights}
         </p>
 
         {/* Built with */}
@@ -56,7 +58,7 @@ export default function Footer() {
           color: 'rgba(148, 163, 184, 0.5)',
           textAlign: 'center',
         }}>
-          Byggd med React, TypeScript & CSS
+          {t.footer.builtWith}
         </p>
       </div>
 
