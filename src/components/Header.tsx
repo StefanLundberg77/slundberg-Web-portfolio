@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, BrainCircuit } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Header() {
@@ -44,26 +44,29 @@ export default function Header() {
         {/* Logo */}
         <a href="#home" style={{
           display: 'flex',
-          alignItems: 'center',
-          gap: '0.75rem',
-          fontSize: '1.25rem',
-          fontWeight: 800,
-          fontFamily: 'var(--font-heading)',
-          letterSpacing: '-0.03em',
+          alignItems: 'baseline',
+          gap: '0.1rem',
+          textDecoration: 'none',
         }}>
-          <div style={{
-            background: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))',
-            borderRadius: '10px',
-            padding: '0.4rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: 'var(--shadow-glow)',
+          <span style={{
+            fontSize: '2.25rem',
+            fontWeight: 900,
+            fontFamily: 'var(--font-heading)',
+            color: '#ffffff',
+            lineHeight: 0.8,
+            textShadow: '0 0 12px rgba(255, 255, 255, 0.25)',
+            letterSpacing: '-0.05em',
           }}>
-            <BrainCircuit size={20} color="white" />
-          </div>
-          <span>
-            s<span style={{ color: 'var(--color-accent)' }}>lundberg</span>
+            S
+          </span>
+          <span style={{
+            fontSize: '1.25rem',
+            fontWeight: 800,
+            fontFamily: 'var(--font-heading)',
+            color: 'var(--color-accent)',
+            letterSpacing: '-0.03em',
+          }}>
+            lundberg
           </span>
         </a>
 

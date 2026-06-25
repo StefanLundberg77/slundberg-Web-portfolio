@@ -1,4 +1,3 @@
-import { BrainCircuit } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
@@ -25,21 +24,28 @@ export default function Footer() {
         {/* Logo & Brand */}
         <div style={{
           display: 'flex',
-          alignItems: 'center',
-          gap: '0.5rem',
+          alignItems: 'baseline',
+          gap: '0.1rem',
         }}>
-          <div style={{
-            background: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))',
-            borderRadius: '6px',
-            padding: '0.25rem',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+          <span style={{
+            fontSize: '1.75rem',
+            fontWeight: 900,
+            fontFamily: 'var(--font-heading)',
+            color: '#ffffff',
+            lineHeight: 0.8,
+            textShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
+            letterSpacing: '-0.05em',
           }}>
-            <BrainCircuit size={14} color="white" />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: '0.95rem' }}>
-            s<span style={{ color: 'var(--color-accent)' }}>lundberg</span>
+            S
+          </span>
+          <span style={{
+            fontSize: '1.05rem',
+            fontWeight: 800,
+            fontFamily: 'var(--font-heading)',
+            color: 'var(--color-accent)',
+            letterSpacing: '-0.03em',
+          }}>
+            lundberg
           </span>
         </div>
 
