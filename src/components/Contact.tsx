@@ -92,39 +92,52 @@ export default function Contact() {
           display: 'grid',
           gridTemplateColumns: '1fr',
           gap: '3rem',
-          alignItems: 'start'
+          alignItems: 'stretch'
         }} className="contact-grid">
           
-          {/* Info Side */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-            <h3 style={{
-              fontSize: '1.75rem',
-              fontWeight: 700,
-              fontFamily: 'var(--font-heading)',
-              color: 'var(--color-text-primary)'
-            }}>
-              {t.contact.subtitle}
-            </h3>
-            
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              {t.contact.desc}
-            </p>
+          {/* Info Side Card */}
+          <div className="card" style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '2rem',
+            padding: '2.5rem',
+            justifyContent: 'space-between',
+            height: '100%'
+          }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <h3 style={{
+                fontSize: '1.75rem',
+                fontWeight: 700,
+                fontFamily: 'var(--font-heading)',
+                color: 'var(--color-text-primary)'
+              }}>
+                {t.contact.subtitle}
+              </h3>
+              
+              <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: '1.7' }}>
+                {t.contact.desc}
+              </p>
+            </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: 'auto' }}>
               {contactLinks.map((link, idx) => (
                 <a 
                   key={idx}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="card"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '1.25rem',
-                    padding: '1.25rem 1.5rem',
+                    padding: '1rem 1.25rem',
                     textDecoration: 'none',
+                    borderRadius: '12px',
+                    border: '1px solid rgba(255, 255, 255, 0.04)',
+                    background: 'rgba(255, 255, 255, 0.01)',
+                    transition: 'var(--transition-smooth)',
                   }}
+                  className="contact-link-row"
                 >
                   <div style={{
                     background: 'rgba(99, 102, 241, 0.08)',
@@ -134,12 +147,13 @@ export default function Contact() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--color-primary)'
-                  }}>
+                    color: 'var(--color-primary)',
+                    transition: 'var(--transition-smooth)',
+                  }} className="contact-link-icon">
                     {link.icon}
                   </div>
                   <div>
-                    <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', fontWeight: 600 }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', fontWeight: 600, fontFamily: 'var(--font-mono)' }}>
                       {link.label}
                     </div>
                     <div style={{ fontSize: '0.95rem', color: 'var(--color-text-primary)', fontWeight: 500 }}>
@@ -284,7 +298,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <style>{`
+       <style>{`
         @media (min-width: 992px) {
           .contact-grid {
             grid-template-columns: 1fr 1fr !important;
@@ -295,6 +309,19 @@ export default function Contact() {
           border-color: var(--color-primary) !important;
           box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
           outline: none;
+        }
+
+        .contact-link-row:hover {
+          background: rgba(255, 255, 255, 0.04) !important;
+          border-color: rgba(99, 102, 241, 0.25) !important;
+          transform: translateX(4px);
+        }
+
+        .contact-link-row:hover .contact-link-icon {
+          background: rgba(6, 182, 212, 0.15) !important;
+          color: var(--color-accent) !important;
+          border-color: rgba(6, 182, 212, 0.3) !important;
+          box-shadow: 0 0 12px rgba(6, 182, 212, 0.25);
         }
       `}</style>
     </section>
