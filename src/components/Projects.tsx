@@ -3,7 +3,6 @@ import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, D
 import { useLanguage } from '../context/LanguageContext';
 import pnsScreenshot from '../assets/pns_screenshot.png';
 import nfrScreenshot from '../assets/nfr_screenshot.png';
-import orbisScreenshot from '../assets/orbis_screenshot.png';
 
 export default function Projects() {
   const [activeRagTab, setActiveRagTab] = useState<'local' | 'azure'>('local');
@@ -87,12 +86,7 @@ export default function Projects() {
               </div>
 
               {/* Image / Graphic Side */}
-              <div 
-                className="project-graphic-side lia-bg"
-                style={{
-                  backgroundImage: `url(${orbisScreenshot})`,
-                }}
-              >
+              <div className="project-graphic-side lia-bg">
                 <div className="lia-overlay">
                   <Server size={48} className="lia-icon-glow" />
                   <span className="lia-badge">FLASK, MYSQL & RAG</span>
@@ -444,25 +438,8 @@ export default function Projects() {
 
         /* LIA project specific styles */
         .lia-bg {
-          background-size: cover;
-          background-position: center;
-          position: relative;
+          background: linear-gradient(135deg, #020617 0%, #075985 100%);
           border-top: 1px solid var(--border-color);
-          transition: var(--transition-smooth);
-        }
-        .lia-bg::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(135deg, rgba(3, 7, 18, 0.65) 0%, rgba(3, 7, 18, 0.55) 100%);
-          z-index: 1;
-          transition: var(--transition-smooth);
-        }
-        .lia-bg:hover::before {
-          background: linear-gradient(135deg, rgba(3, 7, 18, 0.45) 0%, rgba(3, 7, 18, 0.35) 100%);
         }
         @media (min-width: 992px) {
           .lia-bg {
