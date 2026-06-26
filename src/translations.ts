@@ -34,16 +34,30 @@ export const translations = {
       card2Title: 'Game Direction',
       card2Desc: 'Som Game Director på Nordstern (del av Northack) leder jag visionen, speldesignen och samordningen för vårt nuvarande spelprojekt "No Final Run". Jag kombinerar konstnärligt berättande med strukturerad systemdesign.',
       card3Title: 'Teknisk Filosofi',
-      card3Desc: 'Jag värdesätter ren kod, modulär arkitektur och starka OOP-principer. Oavsett om det är Python-kod för AI-pipelines, Dart/Flutter för frontend eller spelmotorarkitektur, strävar jag efter skalbarhet och enkelhet.',
+      card3Desc: 'Jag värdesätter ren kod, modulär arkitektur och starka OOP-principer. Oavsett om det är Python-kod för AI-pipelines, React/JavaScript för frontend eller spelmotorarkitektur, strävar jag efter skalbarhet och enkelhet.',
     },
     projects: {
       title: 'Utvalda ',
       titleSpan: 'Projekt',
       statusDeveloping: 'UNDER UTVECKLING',
+      statusCompleted: 'GENOMFÖRT',
       roleLabel: 'Roll: ',
-      responsibilitiesLabel: 'Mina ansvarsområden:',
+      responsibilitiesLabel: 'Mina ansvarsområden / erfarenheter:',
       featuresLabel: 'Huvudfunktioner:',
       
+      lia: {
+        tagLia: 'LIA / Praktik',
+        tagFullstack: 'Fullstack',
+        tagAi: 'AI-integrering',
+        title: 'LIA: Fullstack & AI på Orbislinks',
+        role: 'Fullstackutvecklare & AI-intern',
+        desc1: 'Under min andra LIA-period arbetade jag brett med utvecklingen av Orbislinks plattform. Jag tog självständigt ansvar för att designa och bygga deras nya Career Page samt utvecklade grunden (MVP) till en B2P2P-marknadsplats med en integrerad RAG-lösning för att generera analyser från kundfeedback.',
+        desc2: 'Jag samutvecklade plattformens chatbot genom att implementera en RAG-agent och pipeline som hämtade information från företagets interna API, externa flygplatsportaler (Swedavia/Aena) och webbsökning som fallback. Dessutom byggde jag webscrapers för Swedavia och spanska Aena.',
+        resp1: 'Utveckling av MVP-struktur för B2P2P-marknadsplats (KYC/flöden)',
+        resp2: 'Implementering av RAG-agent & chatbot-pipeline (Flask)',
+        resp3: 'Skapande av automatiska webscrapers för flygplatsdata (API/CSS-selektering)',
+        resp4: 'Felsökning och uppsättning av utvecklingsmiljö i WSL/Linux, Docker & Nginx',
+      },
       game: {
         tagSpel: 'Spelutveckling',
         tagStudio: 'Nordstern Studio',
@@ -54,7 +68,7 @@ export const translations = {
         desc2: 'Projektet involverar samordning av utvecklingsteam, spelmekanikdesign, nivådesign och berättande. Vi bygger en fängslande och dynamisk spelupplevelse med fokus på tight spelkänsla, hög prestanda och en unik estetisk stil.',
         resp1: 'Kreativ ledning & speldesign',
         resp2: 'Agil projektledning & teamkoordinering',
-        resp3: 'Spelmekanik & prototyping',
+        resp3: 'Spelmekanik & prototyping (Unity/C#)',
         resp4: 'Systemarkitektur & verktygsdesign',
       },
       rag: {
@@ -73,15 +87,15 @@ export const translations = {
       },
       pos: {
         tagFullstack: 'Fullstack',
-        tagCross: 'Mobil, Webb & Desktop',
+        tagCross: 'Webb & Databas',
         tagPos: 'Kassasystem',
         title: 'PNS-Free',
         subtitle: 'Open-source POS-system för restauranger och butiker',
-        desc: 'Ett modernt, cross-platform Point of Sale (POS) system utvecklat med Flutter och Dart. Systemet erbjuder en offline-first-upplevelse med snabb lokal lagring och ett responsivt gränssnitt lämpat för restauranger, caféer och mindre detaljhandel.',
+        desc: 'Ett modernt webbaserat Point of Sale (POS) system utvecklat med FastAPI (Python) på backend och Vanilla JavaScript på frontend. Systemet erbjuder lokal datalagring via SQLite och ett responsivt, snabbt gränssnitt lämpat för restauranger, caféer och butiker.',
         feat1: 'Beställnings- & orderhantering i realtid',
         feat2: 'Produktkatalog med kategorier och prissättning',
-        feat3: 'Offline-stöd med Hive lokal databas',
-        feat4: 'Cross-platform: Android, iOS, Webb och Desktop',
+        feat3: 'Lokal datalagring med SQLite-databas',
+        feat4: 'Responsivt webbgränssnitt för alla enheter',
       }
     },
     skills: {
@@ -91,6 +105,19 @@ export const translations = {
       catDev: 'Systemutveckling & OOP',
       catAi: 'AI & RAG-system',
       catCloud: 'Molntjänster & DevOps',
+      clickHint: 'Klicka på kortet för fullständig översikt',
+      modal: {
+        close: 'Stäng',
+        subLanguages: 'Programmeringsspråk',
+        subLibraries: 'Ramverk & Bibliotek',
+        subTools: 'Verktyg & Miljöer',
+        subConcepts: 'Metodiker & Koncept',
+        
+        gameDesc: 'Inom spelutveckling kombinerar jag kreativt ledarskap som Game Director med praktisk utveckling i motorer som Unity. Jag leder det agila teamarbetet och driver visionen för spelmekanik och design.',
+        devDesc: 'En gedigen grund inom objektorienterad systemarkitektur (OOP) i både C#/.NET och Python. Erfarenhet av att bygga robusta API:er, hantera databasmigrationer och felsöka komplexa flöden.',
+        aiDesc: 'Specialiserad på att bygga intelligenta system med maskininlärning och LLM-kopplingar. Omfattar multimodala RAG-pipelines, datamodellering, analys samt webscraping för datainsamling.',
+        cloudDesc: 'Erfarenhet av att sätta upp utvecklingsmiljöer, konfigurera servrar och distribuera applikationer i molnet. Hanterar containerteknik, databashantering samt verktyg för ljud- och musikproduktion.',
+      }
     },
     contact: {
       title: 'Hör gärna ',
@@ -148,16 +175,30 @@ export const translations = {
       card2Title: 'Game Direction',
       card2Desc: 'As Game Director at Nordstern (part of Northack), I lead the vision, game design, and coordination for our current game project "No Final Run". I combine artistic storytelling with structured system design.',
       card3Title: 'Technical Philosophy',
-      card3Desc: 'I value clean code, modular architecture, and strong OOP principles. Whether it is Python code for AI pipelines, Dart/Flutter for frontend, or game engine architecture, I strive for scalability and simplicity.',
+      card3Desc: 'I value clean code, modular architecture, and strong OOP principles. Whether it is Python code for AI pipelines, React/JavaScript for frontend, or game engine architecture, I strive for scalability and simplicity.',
     },
     projects: {
       title: 'Featured ',
       titleSpan: 'Projects',
       statusDeveloping: 'IN DEVELOPMENT',
+      statusCompleted: 'COMPLETED',
       roleLabel: 'Role: ',
-      responsibilitiesLabel: 'My Responsibilities:',
+      responsibilitiesLabel: 'My Responsibilities / Experiences:',
       featuresLabel: 'Key Features:',
       
+      lia: {
+        tagLia: 'LIA / Internship',
+        tagFullstack: 'Fullstack',
+        tagAi: 'AI Integration',
+        title: 'LIA: Fullstack & AI at Orbislinks',
+        role: 'Fullstack Developer & AI Intern',
+        desc1: 'During my second internship (LIA) period, I worked across Orbislinks technical stack. I took independent responsibility for designing and building their new Career Page and developing the MVP foundation for a B2P2P marketplace, including an integrated RAG solution to generate analyses from customer feedback.',
+        desc2: 'I co-developed the platform\'s chatbot by implementing a RAG agent and pipeline querying the company\'s internal API, external airport portals (Swedavia/Aena), and web search as fallback. I also built web scrapers for Swedavia and Aena.',
+        resp1: 'Development of the MVP structure for the B2P2P marketplace (KYC & transaction flows)',
+        resp2: 'Implementation of the RAG agent & chatbot pipeline (Flask)',
+        resp3: 'Building automated web scrapers for airport portal data (APIs & CSS selectors)',
+        resp4: 'Debugging and setting up the development environment using WSL/Linux, Docker & Nginx',
+      },
       game: {
         tagSpel: 'Game Development',
         tagStudio: 'Nordstern Studio',
@@ -168,7 +209,7 @@ export const translations = {
         desc2: 'The project involves coordinating development teams, designing game mechanics, level design, and narrative. We are building an engaging and dynamic gaming experience focusing on tight gameplay, high performance, and a unique aesthetic style.',
         resp1: 'Creative direction & game design',
         resp2: 'Agile project management & team coordination',
-        resp3: 'Gameplay mechanics & prototyping',
+        resp3: 'Gameplay mechanics & prototyping (Unity/C#)',
         resp4: 'System architecture & tool design',
       },
       rag: {
@@ -187,15 +228,15 @@ export const translations = {
       },
       pos: {
         tagFullstack: 'Fullstack',
-        tagCross: 'Mobile, Web & Desktop',
+        tagCross: 'Web & Database',
         tagPos: 'POS System',
         title: 'PNS-Free',
         subtitle: 'Open-source POS system for restaurants and retail',
-        desc: 'A modern, cross-platform Point of Sale (POS) system built with Flutter and Dart. The system offers an offline-first experience with fast local storage and a responsive interface suitable for restaurants, cafes, and small retail businesses.',
+        desc: 'A modern web-based Point of Sale (POS) system built with FastAPI (Python) on the backend and Vanilla JavaScript on the frontend. The system offers local data storage via SQLite and a responsive, fast interface suitable for restaurants, cafes, and retail.',
         feat1: 'Real-time ordering & order management',
         feat2: 'Product catalog with categories and pricing',
-        feat3: 'Offline support with Hive local database',
-        feat4: 'Cross-platform: Android, iOS, Web, and Desktop',
+        feat3: 'Local data storage with SQLite database',
+        feat4: 'Responsive web interface for all devices',
       }
     },
     skills: {
@@ -205,6 +246,19 @@ export const translations = {
       catDev: 'Software Dev & OOP',
       catAi: 'AI & RAG Systems',
       catCloud: 'Cloud Services & DevOps',
+      clickHint: 'Click card for complete overview',
+      modal: {
+        close: 'Close',
+        subLanguages: 'Programming Languages',
+        subLibraries: 'Frameworks & Libraries',
+        subTools: 'Tools & Environments',
+        subConcepts: 'Methodologies & Concepts',
+        
+        gameDesc: 'In game development, I combine creative leadership as a Game Director with hands-on scripting in game engines like Unity. I direct the agile workflow and drive the design of gameplay mechanics.',
+        devDesc: 'A solid foundation in object-oriented system architecture (OOP) in both C#/.NET and Python. Experienced in building robust APIs, handling database migrations, and debugging complex system pipelines.',
+        aiDesc: 'Specialized in building intelligent systems with machine learning and LLM integrations. Includes multimodal RAG pipelines, data modeling, analysis, and automated web scraping for data collection.',
+        cloudDesc: 'Experienced in setting up developer environments, configuring web servers, and deploying applications. Hands-on with containerization, database management, and creative sound tools.',
+      }
     },
     contact: {
       title: 'Get in ',

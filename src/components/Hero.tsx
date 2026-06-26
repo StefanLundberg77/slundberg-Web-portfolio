@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { BrainCircuit, ArrowDown } from 'lucide-react';
+import { BrainCircuit, ChevronsDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
@@ -249,26 +249,30 @@ export default function Hero() {
       {/* Down indicator */}
       <a 
         href="#about" 
+        className="scroll-down-indicator"
+        aria-label="Scroll down"
         style={{
           position: 'absolute',
-          bottom: '2rem',
+          bottom: '2.5rem',
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 2,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '0.5rem',
-          fontSize: '0.8rem',
-          color: 'var(--color-text-secondary)',
           animation: 'bounce 2s infinite',
         }}
       >
-        <span>{t.hero.scrollDown}</span>
-        <ArrowDown size={16} />
+        <ChevronsDown size={32} strokeWidth={1.8} />
       </a>
 
       <style>{`
+        .scroll-down-indicator {
+          color: var(--color-text-secondary);
+          opacity: 0.6;
+          transition: color 0.3s ease, opacity 0.3s ease;
+        }
+        .scroll-down-indicator:hover {
+          color: var(--color-accent);
+          opacity: 1;
+        }
         @keyframes bounce {
           0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
           40% { transform: translate(-50%, -8px); }

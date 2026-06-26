@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud } from 'lucide-react';
+import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, Database } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import pnsScreenshot from '../assets/pns_screenshot.png';
+import nfrScreenshot from '../assets/nfr_screenshot.png';
+import orbisScreenshot from '../assets/orbis_screenshot.png';
 
 export default function Projects() {
   const [activeRagTab, setActiveRagTab] = useState<'local' | 'azure'>('local');
@@ -18,17 +21,96 @@ export default function Projects() {
           flexDirection: 'column',
           gap: '4rem',
         }}>
-          {/* PROJECT 1: NO FINAL RUN */}
+          {/* PROJECT 1: LIA @ ORBISLINKS */}
           <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
             <div className="project-grid">
-              {/* Image / Graphic Side */}
-              <div className="project-graphic-side game-bg">
-                <div className="game-overlay">
-                  <Gamepad2 size={48} className="game-icon-glow" />
-                  <span className="game-status-badge">{t.projects.statusDeveloping}</span>
+              {/* Content Side */}
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span className="tag tag-accent">{t.projects.lia.tagLia}</span>
+                  <span className="tag">{t.projects.lia.tagFullstack}</span>
+                  <span className="tag">{t.projects.lia.tagAi}</span>
+                </div>
+
+                <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
+                  {t.projects.lia.title}
+                </h3>
+
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
+                  {t.projects.roleLabel}{t.projects.lia.role}
+                </h4>
+
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.lia.desc1}
+                </p>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.lia.desc2}
+                </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                  <span className="mini-tag">Flask</span>
+                  <span className="mini-tag">React</span>
+                  <span className="mini-tag">MySQL</span>
+                  <span className="mini-tag">Docker</span>
+                  <span className="mini-tag">Celery</span>
+                  <span className="mini-tag">Alembic</span>
+                  <span className="mini-tag">WSL/Linux</span>
+                  <span className="mini-tag">RAG / LLMs</span>
+                </div>
+
+                <div style={{ marginTop: '0.5rem' }}>
+                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                    {t.projects.responsibilitiesLabel}
+                  </h5>
+                  <ul style={{ 
+                    listStyle: 'none', 
+                    display: 'grid', 
+                    gridTemplateColumns: '1fr',
+                    gap: '0.5rem',
+                    fontSize: '0.9rem',
+                    color: 'var(--color-text-secondary)'
+                  }} className="skills-list-grid">
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp1}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp2}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp3}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp4}
+                    </li>
+                  </ul>
                 </div>
               </div>
-              
+
+              {/* Image / Graphic Side */}
+              <div 
+                className="project-graphic-side lia-bg"
+                style={{
+                  backgroundImage: `url(${orbisScreenshot})`,
+                }}
+              >
+                <div className="lia-overlay">
+                  <Server size={48} className="lia-icon-glow" />
+                  <span className="lia-badge">FLASK, MYSQL & RAG</span>
+                  <div className="lia-console">
+                    <div>$ python chatbot.py --rag</div>
+                    <div>&gt; Loading Swedavia API scraper... [OK]</div>
+                    <div>&gt; Loading Aena API scraper... [OK]</div>
+                    <div>&gt; Initializing Flask B2P2P MVP... [OK]</div>
+                    <div>&gt; Initializing feedback RAG analyzer... [OK]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJECT 2: NO FINAL RUN */}
+          <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
+            <div className="project-grid">
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -51,6 +133,14 @@ export default function Projects() {
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
                   {t.projects.game.desc2}
                 </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                  <span className="mini-tag">Unity</span>
+                  <span className="mini-tag">C#</span>
+                  <span className="mini-tag">Game Design</span>
+                  <span className="mini-tag">Agile / Scrum</span>
+                  <span className="mini-tag">Prototyping</span>
+                </div>
 
                 <div style={{ marginTop: '0.5rem' }}>
                   <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
@@ -79,10 +169,23 @@ export default function Projects() {
                   </ul>
                 </div>
               </div>
+
+              {/* Image / Graphic Side */}
+              <div 
+                className="project-graphic-side game-bg"
+                style={{
+                  backgroundImage: `url(${nfrScreenshot})`,
+                }}
+              >
+                <div className="game-overlay">
+                  <Gamepad2 size={48} className="game-icon-glow" />
+                  <span className="game-status-badge">{t.projects.statusDeveloping}</span>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* PROJECT 2: EXAMENSARBETE (THESIS) */}
+          {/* PROJECT 3: EXAMENSARBETE (THESIS) */}
           <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
             <div className="project-grid">
               {/* Content Side */}
@@ -167,33 +270,69 @@ export default function Projects() {
 
               {/* Graphic Side */}
               <div className="project-graphic-side rag-bg">
-                <div className="rag-diagram">
-                  <BrainCircuit size={48} className="rag-icon-glow" />
+                <div className="rag-flow-container">
+                  {/* Flow Nodes */}
+                  <div className="rag-flow-nodes">
+                    {/* Node 1: Image Input */}
+                    <div className="rag-node">
+                      <div className="rag-icon-wrapper node-image">
+                        <Camera size={22} />
+                      </div>
+                      <span className="rag-node-label">IMAGE INPUT</span>
+                    </div>
+                    
+                    {/* Connection 1 */}
+                    <div className="rag-connector">
+                      <div className="rag-line"></div>
+                      <div className="rag-packet packet-1"></div>
+                    </div>
+                    
+                    {/* Node 2: Embedding model */}
+                    <div className="rag-node">
+                      <div className="rag-icon-wrapper node-ai">
+                        <BrainCircuit size={26} className="rag-icon-glow" />
+                      </div>
+                      <span className="rag-node-label">EMBEDDING</span>
+                    </div>
+                    
+                    {/* Connection 2 */}
+                    <div className="rag-connector">
+                      <div className="rag-line"></div>
+                      <div className="rag-packet packet-2"></div>
+                    </div>
+                    
+                    {/* Node 3: Vector DB */}
+                    <div className="rag-node">
+                      <div className="rag-icon-wrapper node-db">
+                        <Database size={22} />
+                      </div>
+                      <span className="rag-node-label">VECTOR DB</span>
+                    </div>
+                  </div>
+                  
+                  {/* Diagram Title */}
                   <div style={{
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    marginTop: '1rem',
+                    marginTop: '2rem',
+                    textAlign: 'center'
                   }}>
-                    <span style={{ fontSize: '0.85rem', fontWeight: 'bold' }}>{t.projects.rag.diagramTitle}</span>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--color-text-secondary)' }}>{t.projects.rag.diagramSub}</span>
+                    <span style={{ fontSize: '0.85rem', fontWeight: 'bold', letterSpacing: '0.05em', color: 'var(--color-text-primary)' }}>
+                      {t.projects.rag.diagramTitle}
+                    </span>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-text-secondary)', marginTop: '0.25rem' }}>
+                      {t.projects.rag.diagramSub}
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* PROJECT 3: PNS-FREE */}
+          {/* PROJECT 4: PNS-FREE */}
           <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
             <div className="project-grid">
-              {/* Image / Graphic Side */}
-              <div className="project-graphic-side pos-bg">
-                <div className="pos-overlay">
-                  <Monitor size={48} className="pos-icon-glow" />
-                  <span className="pos-platform-badge">FLUTTER & DART</span>
-                </div>
-              </div>
-
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
@@ -215,11 +354,11 @@ export default function Projects() {
                 </p>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <span className="mini-tag">Flutter</span>
-                  <span className="mini-tag">Dart</span>
-                  <span className="mini-tag">Provider (State)</span>
-                  <span className="mini-tag">Hive DB (Offline-first)</span>
-                  <span className="mini-tag">Font Awesome</span>
+                  <span className="mini-tag">FastAPI</span>
+                  <span className="mini-tag">JavaScript</span>
+                  <span className="mini-tag">SQLite</span>
+                  <span className="mini-tag">HTML5 / CSS3</span>
+                  <span className="mini-tag">Python</span>
                 </div>
 
                 <div style={{ marginTop: '0.5rem' }}>
@@ -247,6 +386,19 @@ export default function Projects() {
                       <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat4}
                     </li>
                   </ul>
+                </div>
+              </div>
+
+              {/* Image / Graphic Side */}
+              <div 
+                className="project-graphic-side pos-bg"
+                style={{
+                  backgroundImage: `url(${pnsScreenshot})`,
+                }}
+              >
+                <div className="pos-overlay">
+                  <Monitor size={48} className="pos-icon-glow" />
+                  <span className="pos-platform-badge">FASTAPI & VANILLA JS</span>
                 </div>
               </div>
             </div>
@@ -277,43 +429,161 @@ export default function Projects() {
           position: relative;
           display: flex;
           align-items: center;
-          justifyContent: center;
+          justify-content: center;
           padding: 2rem;
           background-size: cover;
           background-position: center;
+          border-top: 1px solid var(--border-color);
         }
 
-        /* Gradient backgrounds for game, RAG and POS graphics */
-        .game-bg {
-          background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
-          border-bottom: 1px solid var(--border-color);
+        @media (min-width: 992px) {
+          .project-graphic-side {
+            border-top: none;
+          }
+        }
+
+        /* LIA project specific styles */
+        .lia-bg {
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          border-top: 1px solid var(--border-color);
+          transition: var(--transition-smooth);
+        }
+        .lia-bg::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(3, 7, 18, 0.65) 0%, rgba(3, 7, 18, 0.55) 100%);
+          z-index: 1;
+          transition: var(--transition-smooth);
+        }
+        .lia-bg:hover::before {
+          background: linear-gradient(135deg, rgba(3, 7, 18, 0.45) 0%, rgba(3, 7, 18, 0.35) 100%);
         }
         @media (min-width: 992px) {
-          .game-bg {
-            border-bottom: none;
+          .lia-bg {
+            border-top: none;
             border-right: 1px solid var(--border-color);
           }
         }
 
-        .rag-bg {
-          background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
-          border-bottom: 1px solid var(--border-color);
+        .lia-overlay {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: white;
+          text-align: center;
+          width: 100%;
+        }
+
+        .lia-badge {
+          margin-top: 1rem;
+          font-size: 0.75rem;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          padding: 0.35rem 0.75rem;
+          border-radius: 4px;
+          background: #030712;
+          border: 1px solid rgba(14, 165, 233, 0.4);
+          color: var(--color-accent);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .lia-icon-glow {
+          filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.6));
+          animation: pulse 3s infinite alternate;
+          color: var(--color-accent);
+        }
+
+        .lia-console {
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 0.75rem;
+          color: #10b981;
+          opacity: 0.95;
+          text-align: left;
+          width: 90%;
+          max-width: 320px;
+          line-height: 1.4;
+          padding: 0.85rem;
+          background: #030712;
+          border: 1px solid rgba(16, 185, 129, 0.3);
+          border-radius: 6px;
+          margin-top: 1rem;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+          user-select: none;
+        }
+
+        /* Game project specific styles */
+        .game-bg {
+          border-top: 1px solid var(--border-color);
+        }
+        .game-bg::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(30, 27, 75, 0.25) 0%, rgba(49, 16, 66, 0.15) 100%);
+          z-index: 1;
+          transition: var(--transition-smooth);
+        }
+        .game-bg:hover::before {
+          background: linear-gradient(135deg, rgba(30, 27, 75, 0.1) 0%, rgba(49, 16, 66, 0.05) 100%);
+        }
+        .game-overlay {
+          position: relative;
+          z-index: 2;
         }
         @media (min-width: 992px) {
-          .rag-bg {
-            border-bottom: none;
+          .game-bg {
+            border-top: none;
             border-left: 1px solid var(--border-color);
           }
         }
 
+        /* RAG project specific styles */
+        .rag-bg {
+          background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+        }
+        @media (min-width: 992px) {
+          .rag-bg {
+            border-right: 1px solid var(--border-color);
+          }
+        }
+
+        /* POS project specific styles */
         .pos-bg {
-          background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
-          border-bottom: 1px solid var(--border-color);
+          border-top: 1px solid var(--border-color);
+        }
+        .pos-bg::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(12, 74, 110, 0.25) 0%, rgba(8, 47, 73, 0.15) 100%);
+          z-index: 1;
+          transition: var(--transition-smooth);
+        }
+        .pos-bg:hover::before {
+          background: linear-gradient(135deg, rgba(12, 74, 110, 0.1) 0%, rgba(8, 47, 73, 0.05) 100%);
+        }
+        .pos-overlay {
+          position: relative;
+          z-index: 2;
         }
         @media (min-width: 992px) {
           .pos-bg {
-            border-bottom: none;
-            border-right: 1px solid var(--border-color);
+            border-top: none;
+            border-left: 1px solid var(--border-color);
           }
         }
 
@@ -341,6 +611,124 @@ export default function Projects() {
           animation: pulse 3s infinite alternate;
         }
 
+        /* RAG Flow Diagram Styles */
+        .rag-flow-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 95%;
+          max-width: 480px;
+          z-index: 2;
+        }
+
+        .rag-flow-nodes {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .rag-node {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.6rem;
+        }
+
+        .rag-icon-wrapper {
+          height: 56px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: var(--transition-smooth);
+        }
+
+        .rag-icon-wrapper svg {
+          background: rgba(15, 23, 42, 0.8);
+          border: 1px solid var(--border-color);
+          border-radius: 50%;
+          padding: 0.7rem;
+          width: 46px;
+          height: 46px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: var(--transition-smooth);
+        }
+
+        .node-image svg {
+          color: #06b6d4;
+          border-color: rgba(6, 182, 212, 0.3);
+          box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+        }
+
+        .node-ai svg {
+          color: #a855f7;
+          border-color: rgba(168, 85, 247, 0.3);
+          box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+          width: 54px;
+          height: 54px;
+          padding: 0.8rem;
+        }
+
+        .node-db svg {
+          color: #10b981;
+          border-color: rgba(16, 185, 129, 0.3);
+          box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+        }
+
+        .rag-node:hover .rag-icon-wrapper svg {
+          transform: scale(1.15);
+          box-shadow: 0 0 25px currentColor;
+        }
+
+        .rag-node-label {
+          font-size: 0.65rem;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          color: var(--color-text-secondary);
+          white-space: nowrap;
+        }
+
+        .rag-connector {
+          flex: 1;
+          height: 56px;
+          position: relative;
+          margin: 0 0.5rem;
+          min-width: 30px;
+        }
+
+        .rag-line {
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.02));
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+        }
+
+        .rag-packet {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          position: absolute;
+          top: calc(50% - 4px);
+          background: #ffffff;
+          z-index: 3;
+          opacity: 0;
+        }
+
+        .packet-1 {
+          box-shadow: 0 0 6px #ffffff, 0 0 12px #06b6d4, 0 0 20px #a855f7;
+          animation: flowPacket1 2.2s infinite linear;
+        }
+
+        .packet-2 {
+          box-shadow: 0 0 6px #ffffff, 0 0 12px #a855f7, 0 0 20px #10b981;
+          animation: flowPacket2 2.2s infinite linear;
+          animation-delay: 1.1s;
+        }
+
         .rag-icon-glow {
           filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
           animation: pulse 3s infinite alternate;
@@ -354,6 +742,20 @@ export default function Projects() {
         @keyframes pulse {
           0% { transform: scale(1); opacity: 0.8; }
           100% { transform: scale(1.05); opacity: 1; }
+        }
+
+        @keyframes flowPacket1 {
+          0% { left: 0%; opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { left: 100%; opacity: 0; }
+        }
+
+        @keyframes flowPacket2 {
+          0% { left: 0%; opacity: 0; }
+          15% { opacity: 1; }
+          85% { opacity: 1; }
+          100% { left: 100%; opacity: 0; }
         }
 
         .tab-btn {
@@ -392,3 +794,4 @@ export default function Projects() {
     </section>
   );
 }
+
