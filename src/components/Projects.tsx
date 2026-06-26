@@ -507,7 +507,7 @@ export default function Projects() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(135deg, rgba(30, 27, 75, 0.25) 0%, rgba(49, 16, 66, 0.15) 100%);
+          background: linear-gradient(135deg, rgba(30, 27, 75, 0.75) 0%, rgba(49, 16, 66, 0.15) 100%);
           z-index: 1;
           transition: var(--transition-smooth);
         }
