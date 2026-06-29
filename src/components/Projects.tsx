@@ -111,11 +111,14 @@ export default function Projects() {
                 className="project-graphic-side game-bg"
                 style={{
                   backgroundImage: `url(${oxideBg})`,
+                  backgroundSize: '70%',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  backgroundColor: '#05070f',
                 }}
               >
                 <div className="game-overlay">
-                  <Gamepad2 size={48} className="game-icon-glow" style={{ color: 'var(--color-primary)' }} />
-                  <span className="game-status-badge" style={{ borderColor: 'rgba(99, 102, 241, 0.4)', color: '#a5b4fc', background: '#030712' }}>UNITY & C#</span>
+                  <span className="game-status-badge" style={{ borderColor: 'rgba(99, 102, 241, 0.4)', color: '#a5b4fc', background: '#030712', marginTop: 0 }}>UNITY & C#</span>
                 </div>
               </div>
 
