@@ -111,7 +111,7 @@ export default function Skills() {
     {
       desc: t.skills.modal.devDesc,
       groups: {
-        languages: ['C#', 'Python', 'SQL (SQLite, MySQL)', 'TypeScript', 'JavaScript'],
+        languages: ['C#', 'Python', 'SQL (SQLite, MySQL, SQL Server)', 'TypeScript', 'JavaScript'],
         libraries: ['.NET Core / .NET 8', 'React', 'Flask', 'FastAPI', 'Dapper', 'Alembic (Migrationer)'],
         tools: ['Visual Studio', 'Visual Studio Code', 'Spyder', 'Node.js / NPM', 'DBeaver', 'SSMS', 'Git'],
         concepts: language === 'sv' ? [
@@ -137,7 +137,7 @@ export default function Skills() {
       groups: {
         languages: ['Python', 'SQL', 'TypeScript'],
         libraries: ['PydanticAI', 'LanceDB (Vektordatabas)', 'Pandas', 'NumPy', 'Matplotlib', 'Plotly', 'Seaborn', 'Streamlit', 'dbt', 'dltHub', 'DuckDB', 'Scikit-learn'],
-        tools: ['Jupyter Notebooks', 'Spyder', 'Playwright / BeautifulSoup (Web Scraping)', 'OpenAI API / Hugging Face', 'DBeaver'],
+        tools: ['Jupyter Notebooks', 'Spyder', 'Playwright / BeautifulSoup (Web Scraping)', 'OpenAI API / Hugging Face', 'DBeaver', 'Dagster', 'Snowflake'],
         concepts: language === 'sv' ? [
           'Retrieval-Augmented Generation (RAG)',
           'Multimodal AI',
