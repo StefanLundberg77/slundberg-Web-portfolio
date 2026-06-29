@@ -3,6 +3,7 @@ import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, D
 import { useLanguage } from '../context/LanguageContext';
 import pnsScreenshot from '../assets/pns_screenshot.png';
 import nfrScreenshot from '../assets/nfr_screenshot.png';
+import oxideBg from '../assets/oxide.avif';
 
 export default function Projects() {
   const [activeRagTab, setActiveRagTab] = useState<'local' | 'azure'>('local');
@@ -109,7 +110,7 @@ export default function Projects() {
               <div 
                 className="project-graphic-side game-bg"
                 style={{
-                  background: 'linear-gradient(135deg, #1e1b4b 0%, #1e293b 100%)',
+                  backgroundImage: `url(${oxideBg})`,
                 }}
               >
                 <div className="game-overlay">
