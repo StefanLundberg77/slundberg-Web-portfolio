@@ -51,7 +51,7 @@ export default function Skills() {
         'TypeScript / JavaScript',
         'FastAPI',
         'React',
-        'SQL (SQLite, PostgreSQL)'
+        'SQL (SQLite, MySQL)'
       ]
     },
     {
@@ -75,7 +75,7 @@ export default function Skills() {
         'Vercel',
         'Git & GitHub Actions',
         'CI/CD Pipelines',
-        'API-design'
+        'Docker / Containerization'
       ]
     }
   ];
@@ -85,9 +85,9 @@ export default function Skills() {
     {
       desc: t.skills.modal.gameDesc,
       groups: {
-        languages: ['C#', 'C++', 'Python'],
+        languages: ['C#'],
         libraries: ['Unity Engine', 'MonoBehaviour', 'Unity UI / UGUI', 'Unity Physics'],
-        tools: ['Unity Editor', 'Visual Studio', 'Git / GitHub'],
+        tools: ['Unity Editor', 'Visual Studio', 'Reaper / Cubase (DAW)', 'Git / GitHub'],
         concepts: language === 'sv' ? [
           'Spelregi (Game Direction)',
           'Speldesign (Game Design)',
@@ -111,9 +111,9 @@ export default function Skills() {
     {
       desc: t.skills.modal.devDesc,
       groups: {
-        languages: ['C#', 'Python', 'SQL (T-SQL, PostgreSQL, MySQL)', 'TypeScript', 'JavaScript'],
-        libraries: ['.NET Core / .NET 8', 'Flask', 'FastAPI', 'Entity Framework / Dapper', 'Alembic (Migrationer)', 'Node.js', 'Express.js'],
-        tools: ['Visual Studio', 'Visual Studio Code', 'Spyder', 'NPM', 'DBeaver', 'SSMS', 'Git'],
+        languages: ['C#', 'Python', 'SQL (SQLite, MySQL)', 'TypeScript', 'JavaScript'],
+        libraries: ['.NET Core / .NET 8', 'React', 'Flask', 'FastAPI', 'Dapper', 'Alembic (Migrationer)'],
+        tools: ['Visual Studio', 'Visual Studio Code', 'Spyder', 'Node.js / NPM', 'DBeaver', 'SSMS', 'Git'],
         concepts: language === 'sv' ? [
           'Objektorienterad programmering (OOP)',
           'Systemarkitektur',
@@ -136,7 +136,7 @@ export default function Skills() {
       desc: t.skills.modal.aiDesc,
       groups: {
         languages: ['Python', 'SQL', 'TypeScript'],
-        libraries: ['Scikit-learn', 'PydanticAI', 'LanceDB (Vektordatabas)', 'React', 'Pandas', 'NumPy', 'Matplotlib / Seaborn', 'Streamlit', 'dbt', 'dltHub', 'DuckDB'],
+        libraries: ['PydanticAI', 'LanceDB (Vektordatabas)', 'Pandas', 'NumPy', 'Matplotlib', 'Plotly', 'Seaborn', 'Streamlit', 'dbt', 'dltHub', 'DuckDB', 'Scikit-learn'],
         tools: ['Jupyter Notebooks', 'Spyder', 'Playwright / BeautifulSoup (Web Scraping)', 'OpenAI API / Hugging Face', 'DBeaver'],
         concepts: language === 'sv' ? [
           'Retrieval-Augmented Generation (RAG)',
@@ -165,7 +165,7 @@ export default function Skills() {
       groups: {
         languages: ['Bash / Shell Scripting', 'YAML', 'JSON'],
         libraries: ['Azure Functions', 'Azure AI Search', 'Azure Blob Storage', 'Microsoft Fabric', 'Vercel'],
-        tools: ['Docker', 'Nginx', 'Celery & Redis', 'WSL2 (Windows Subsystem for Linux)', 'GitHub Actions (CI/CD)', 'Reaper / Cubase (Ljudproduktion)'],
+        tools: ['Docker', 'Nginx', 'Celery & Redis', 'WSL2 (Windows Subsystem for Linux)', 'GitHub Actions (CI/CD)'],
         concepts: language === 'sv' ? [
           'CI/CD Pipelines',
           'Containerisering (Containerization)',
