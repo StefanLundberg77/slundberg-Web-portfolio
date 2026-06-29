@@ -114,12 +114,12 @@ export default function Projects() {
                   backgroundSize: '75%',
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: 'center',
-                  backgroundColor: '#05070f',
+                  backgroundColor: '#000000',
                 }}
               >
                 <div className="game-overlay" style={{
                   position: 'absolute',
-                  top: '1.5rem',
+                  bottom: '1.5rem',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
