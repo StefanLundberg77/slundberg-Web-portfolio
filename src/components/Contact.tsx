@@ -16,17 +16,20 @@ const Linkedin = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
+// Contact section with form submission via Web3Forms API
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const { t } = useLanguage();
 
+  // Handle contact form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setStatus('sending');
 
+    // Retrieve API key from environment variable with safe fallback
     const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE';
 
     try {
@@ -60,7 +63,9 @@ export default function Contact() {
     }
   };
 
+  // Direct contact channels
   const contactLinks = [
+
     {
       icon: <Mail size={20} />,
       label: t.contact.infoEmail,

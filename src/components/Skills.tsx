@@ -2,11 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import { Compass, Code2, BrainCircuit, Cloud, Check, X, Maximize2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+// Skills overview with category cards and detailed breakdown modal dialogs
 export default function Skills() {
   const { t, language } = useLanguage();
   const [activeModal, setActiveModal] = useState<number | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
+  // Close modal dialog on Escape key press and prevent background scrolling
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -23,11 +25,13 @@ export default function Skills() {
     };
   }, [activeModal]);
 
+  // Close modal when clicking on backdrop
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
       setActiveModal(null);
     }
   };
+
 
   const skillCategories = [
     {

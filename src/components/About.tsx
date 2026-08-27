@@ -1,9 +1,11 @@
 import { Code2, GraduationCap, Compass } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+// Core highlights focusing on education/AI, game direction, and technical philosophy
 export default function About() {
   const { t } = useLanguage();
 
+  // Highlight card items
   const cards = [
     {
       icon: <GraduationCap size={24} color="#6366f1" />,
@@ -21,6 +23,7 @@ export default function About() {
       desc: t.about.card3Desc,
     },
   ];
+
 
   return (
     <section id="about" className="section">

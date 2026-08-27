@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { BrainCircuit, ChevronsDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
+// Interactive background canvas with connected particle physics
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const { t } = useLanguage();
@@ -19,6 +20,7 @@ export default function Hero() {
     const particles: Particle[] = [];
     const mouse = { x: null as number | null, y: null as number | null, radius: 150 };
 
+    // Single particle entity with velocity, boundaries and cursor repulsion
     class Particle {
       x: number;
       y: number;
@@ -40,11 +42,11 @@ export default function Hero() {
         this.x += this.vx;
         this.y += this.vy;
 
-        // Boundary collision
+        // Boundary bounce
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
 
-        // Mouse interaction
+        // Repel particle from mouse cursor on proximity
         if (mouse.x !== null && mouse.y !== null) {
           const dx = this.x - mouse.x;
           const dy = this.y - mouse.y;
@@ -66,6 +68,7 @@ export default function Hero() {
       }
     }
 
+    // Initialize particle pool scaled to canvas dimensions
     const init = () => {
       const count = Math.min(Math.floor((width * height) / 9000), 120);
       particles.length = 0;
@@ -73,6 +76,7 @@ export default function Hero() {
         particles.push(new Particle());
       }
     };
+
 
     const drawLines = () => {
       if (!ctx) return;

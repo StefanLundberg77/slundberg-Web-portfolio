@@ -1,13 +1,43 @@
-import { useState } from 'react';
-import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink, X, Maximize2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import pnsScreenshot from '../assets/pns_screenshot.png';
-import nfrScreenshot from '../assets/nfr_screenshot.png';
+import nfrCover from '../assets/nfr_cover.jpg';
 import oxideBg from '../assets/oxide.avif';
 
+// Featured projects showcase with alternating grid presentation and interactive architectural tabs
 export default function Projects() {
+  // Active tab state for the multimodal RAG comparison
   const [activeRagTab, setActiveRagTab] = useState<'local' | 'azure'>('local');
-  const { t } = useLanguage();
+  const [isNfrModalOpen, setIsNfrModalOpen] = useState(false);
+  const nfrModalRef = useRef<HTMLDivElement>(null);
+  const { t, language } = useLanguage();
+
+  // Close modal dialog on Escape key press and lock body scrolling
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsNfrModalOpen(false);
+      }
+    };
+    if (isNfrModalOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isNfrModalOpen]);
+
+  // Close modal when clicking outside content
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (nfrModalRef.current && !nfrModalRef.current.contains(e.target as Node)) {
+      setIsNfrModalOpen(false);
+    }
+  };
+
+
 
   return (
     <section id="projects" className="section" style={{ background: 'rgba(255, 255, 255, 0.01)' }}>
@@ -123,18 +153,47 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Image / Graphic Side */}
+              {/* Image / Graphic Side with click-to-expand */}
               <div 
-                className="project-graphic-side game-bg"
+                className="project-graphic-side game-bg nfr-preview-trigger"
+                onClick={() => setIsNfrModalOpen(true)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsNfrModalOpen(true); } }}
                 style={{
-                  backgroundImage: `url(${nfrScreenshot})`,
+                  backgroundImage: `url(${nfrCover})`,
+                  cursor: 'pointer',
+                  position: 'relative'
                 }}
+                title={language === 'sv' ? 'Klicka för att förstora bild och se Steam-länk' : 'Click to expand image and view Steam link'}
               >
                 <div className="game-overlay">
                   <Gamepad2 size={48} className="game-icon-glow" />
                   <span className="game-status-badge" style={{ borderColor: 'rgba(16, 185, 129, 0.4)', color: '#34d399', background: '#030712' }}>
                     {t.projects.game.tagSteam}
                   </span>
+                </div>
+
+                {/* Enlarge Hint Overlay */}
+                <div className="nfr-zoom-hint" style={{
+                  position: 'absolute',
+                  top: '1rem',
+                  right: '1rem',
+                  background: 'rgba(3, 7, 18, 0.8)',
+                  border: '1px solid var(--border-color)',
+                  backdropFilter: 'blur(8px)',
+                  borderRadius: '20px',
+                  padding: '0.35rem 0.75rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  fontSize: '0.78rem',
+                  color: 'var(--color-text-secondary)',
+                  zIndex: 3,
+                  transition: 'var(--transition-smooth)'
+                }}>
+                  <Maximize2 size={13} color="var(--color-accent)" />
+                  <span>{language === 'sv' ? 'Klicka för att förstora' : 'Click to expand'}</span>
                 </div>
               </div>
             </div>
@@ -553,6 +612,149 @@ export default function Projects() {
         </div>
       </div>
 
+      {/* NO FINAL RUN LIGHTBOX POPUP MODAL */}
+      {isNfrModalOpen && (
+        <div 
+          onClick={handleBackdropClick}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1000,
+            background: 'rgba(3, 7, 18, 0.88)',
+            backdropFilter: 'blur(12px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '1.5rem',
+            animation: 'nfrFadeIn 0.2s ease-out'
+          }}
+        >
+          <div 
+            ref={nfrModalRef}
+            style={{
+              position: 'relative',
+              maxWidth: '1000px',
+              width: '100%',
+              background: 'var(--color-surface)',
+              border: '1px solid var(--border-color)',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.2)',
+              display: 'flex',
+              flexDirection: 'column',
+              animation: 'nfrScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1)'
+            }}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsNfrModalOpen(false)}
+              aria-label="Stäng förhandsgranskning"
+              style={{
+                position: 'absolute',
+                top: '1rem',
+                right: '1rem',
+                zIndex: 10,
+                background: 'rgba(3, 7, 18, 0.8)',
+                border: '1px solid var(--border-color)',
+                borderRadius: '50%',
+                width: '40px',
+                height: '40px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--color-text-primary)',
+                cursor: 'pointer',
+                transition: 'var(--transition-smooth)'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--color-accent)'; e.currentTarget.style.transform = 'scale(1.08)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              <X size={20} />
+            </button>
+
+            {/* Modal Full Image */}
+            <div style={{
+              width: '100%',
+              maxHeight: '68vh',
+              background: '#020617',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              overflow: 'hidden'
+            }}>
+              <img 
+                src={nfrCover} 
+                alt="No Final Run artwork banner" 
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'contain',
+                  display: 'block'
+                }} 
+              />
+            </div>
+
+            {/* Modal Bottom Action Bar */}
+            <div style={{
+              padding: '1.25rem 1.75rem',
+              background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(3, 7, 18, 0.98) 100%)',
+              borderTop: '1px solid var(--border-color)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              gap: '1rem'
+            }}>
+              <div>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#ffffff' }}>
+                  No Final Run
+                </h4>
+                <p style={{ fontSize: '0.85rem', color: 'var(--color-text-secondary)', margin: 0 }}>
+                  {language === 'sv' ? 'Officiellt lanserad på Steam av indiespelbolaget Northhack Media AB' : 'Officially launched on Steam by indie studio Northhack Media AB'}
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a 
+                  href="https://store.steampowered.com/app/4341610/No_Final_Run/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.6rem',
+                    padding: '0.65rem 1.35rem',
+                    fontSize: '0.92rem',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <ExternalLink size={16} />
+                  {t.projects.game.steamBtn}
+                </a>
+                <a 
+                  href="https://www.northhackmedia.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.6rem',
+                    padding: '0.65rem 1.35rem',
+                    fontSize: '0.92rem',
+                    textDecoration: 'none'
+                  }}
+                >
+                  <ExternalLink size={16} />
+                  {t.projects.game.studioBtn}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <style>{`
         .project-grid {
           display: grid;
@@ -919,6 +1121,30 @@ export default function Projects() {
           padding: 0.2rem 0.5rem;
           border-radius: 4px;
           color: var(--color-text-secondary);
+        }
+
+        /* NFR preview hover trigger and lightbox animations */
+        .nfr-preview-trigger {
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+        }
+        .nfr-preview-trigger:hover {
+          transform: scale(1.015);
+        }
+        .nfr-preview-trigger:hover .nfr-zoom-hint {
+          background: rgba(99, 102, 241, 0.35) !important;
+          border-color: var(--color-primary) !important;
+          color: #ffffff !important;
+          box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+        }
+
+        @keyframes nfrFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes nfrScaleUp {
+          from { opacity: 0; transform: scale(0.92); }
+          to { opacity: 1; transform: scale(1); }
         }
       `}</style>
     </section>

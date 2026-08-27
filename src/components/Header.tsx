@@ -7,6 +7,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
+  // Track window scroll position to toggle header backdrop blur
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -15,6 +16,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Primary navigation routes
   const navLinks = [
     { label: t.nav.home, href: '#home' },
     { label: t.nav.about, href: '#about' },
@@ -22,6 +24,7 @@ export default function Header() {
     { label: t.nav.skills, href: '#skills' },
     { label: t.nav.contact, href: '#contact' },
   ];
+
 
   return (
     <header style={{

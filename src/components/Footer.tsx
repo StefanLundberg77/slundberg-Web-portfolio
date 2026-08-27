@@ -1,8 +1,10 @@
 import { useLanguage } from '../context/LanguageContext';
 
+// Footer component with dynamic year and copyright notice
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useLanguage();
+
 
   return (
     <footer style={{
