@@ -21,203 +21,11 @@ export default function Projects() {
           flexDirection: 'column',
           gap: '4rem',
         }}>
-          {/* PROJECT 1: LIA @ ORBISLINKS */}
+          {/* PROJECT 1: NO FINAL RUN */}
           <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
             <div className="project-grid">
-              {/* Content Side */}
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">{t.projects.lia.tagLia}</span>
-                  <span className="tag">{t.projects.lia.tagFullstack}</span>
-                  <span className="tag">{t.projects.lia.tagAi}</span>
-                </div>
-
-                <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-                  {t.projects.lia.title}
-                </h3>
-
-                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
-                  {t.projects.roleLabel}{t.projects.lia.role}
-                </h4>
-
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  {t.projects.lia.desc1}
-                </p>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  {t.projects.lia.desc2}
-                </p>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
-                  <span className="mini-tag">Flask</span>
-                  <span className="mini-tag">React</span>
-                  <span className="mini-tag">MySQL</span>
-                  <span className="mini-tag">Docker</span>
-                  <span className="mini-tag">Celery</span>
-                  <span className="mini-tag">Alembic</span>
-                  <span className="mini-tag">WSL/Linux</span>
-                  <span className="mini-tag">RAG / LLMs</span>
-                </div>
-
-                <div style={{ marginTop: '0.5rem' }}>
-                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-                    {t.projects.responsibilitiesLabel}
-                  </h5>
-                  <ul style={{ 
-                    listStyle: 'none', 
-                    display: 'grid', 
-                    gridTemplateColumns: '1fr',
-                    gap: '0.5rem',
-                    fontSize: '0.9rem',
-                    color: 'var(--color-text-secondary)'
-                  }} className="skills-list-grid">
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp1}
-                    </li>
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp2}
-                    </li>
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp3}
-                    </li>
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp4}
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Image / Graphic Side */}
-              <div className="project-graphic-side lia-bg">
-                <div className="lia-overlay">
-                  <Server size={48} className="lia-icon-glow" />
-                  <span className="lia-badge">FLASK, MYSQL & RAG</span>
-                  <div className="lia-console">
-                    <div>$ python chatbot.py --rag</div>
-                    <div>&gt; Loading Swedavia API scraper... [OK]</div>
-                    <div>&gt; Loading Aena API scraper... [OK]</div>
-                    <div>&gt; Initializing Flask B2P2P MVP... [OK]</div>
-                    <div>&gt; Initializing feedback RAG analyzer... [OK]</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* PROJECT 2: LIA 1 @ NORTHHACK MEDIA */}
-          <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
-            <div className="project-grid">
-              {/* Image / Graphic Side */}
-              <div 
-                className="project-graphic-side game-bg"
-                style={{
-                  backgroundImage: `url(${oxideBg})`,
-                  backgroundSize: '75%',
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'center',
-                  backgroundColor: '#000000',
-                }}
-              >
-                <div className="game-overlay" style={{
-                  position: 'absolute',
-                  bottom: '1.5rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  zIndex: 2
-                }}>
-                  <Gamepad2 size={36} className="game-icon-glow" style={{ color: 'var(--color-primary)' }} />
-                  <span className="game-status-badge" style={{ borderColor: 'rgba(99, 102, 241, 0.4)', color: '#a5b4fc', background: '#030712', marginTop: 0 }}>UNITY & C#</span>
-                </div>
-              </div>
-
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">{t.projects.lia1.tagLia}</span>
-                  <span className="tag">{t.projects.lia1.tagDev}</span>
-                  <span className="tag">{t.projects.lia1.tagNet}</span>
-                </div>
-
-                <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-                  {t.projects.lia1.title}
-                </h3>
-
-                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
-                  {t.projects.roleLabel}{t.projects.lia1.role}
-                </h4>
-
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  {t.projects.lia1.desc1}
-                </p>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  {t.projects.lia1.desc2}
-                </p>
-
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
-                  <span className="mini-tag">Unity</span>
-                  <span className="mini-tag">C#</span>
-                  <span className="mini-tag">Nätverkssynk</span>
-                  <span className="mini-tag">Git / GitHub</span>
-                  <span className="mini-tag">Trådsäkerhet</span>
-                </div>
-
-                <div style={{ marginTop: '0.5rem' }}>
-                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
-                    {t.projects.responsibilitiesLabel}
-                  </h5>
-                  <ul style={{ 
-                    listStyle: 'none', 
-                    display: 'grid', 
-                    gridTemplateColumns: '1fr',
-                    gap: '0.5rem',
-                    fontSize: '0.9rem',
-                    color: 'var(--color-text-secondary)'
-                  }} className="skills-list-grid">
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp1}
-                    </li>
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp2}
-                    </li>
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp3}
-                    </li>
-                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp4}
-                    </li>
-                  </ul>
-                </div>
-
-                <div style={{ marginTop: '0.75rem' }}>
-                  <a 
-                    href="https://www.northhackmedia.com/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.6rem',
-                      padding: '0.65rem 1.35rem',
-                      fontSize: '0.92rem',
-                      textDecoration: 'none',
-                      width: 'fit-content'
-                    }}
-                  >
-                    <ExternalLink size={16} />
-                    {t.projects.game.studioBtn}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* PROJECT 3: NO FINAL RUN */}
-          <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
-            <div className="project-grid">
-              {/* Content Side */}
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   <span className="tag tag-accent">{t.projects.game.tagSteam}</span>
                   <span className="tag">{t.projects.game.tagSpel}</span>
@@ -332,11 +140,167 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* PROJECT 4: EXAMENSARBETE (THESIS) */}
+          {/* PROJECT 2: PNS (POINT OF SALE) */}
+          <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
+            <div className="project-grid">
+              {/* Content Side */}
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span className="tag tag-accent">{t.projects.pos.tagFullstack}</span>
+                  <span className="tag">{t.projects.pos.tagCross}</span>
+                  <span className="tag">{t.projects.pos.tagPos}</span>
+                </div>
+
+                <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
+                  {t.projects.pos.title}
+                </h3>
+                
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
+                  {t.projects.pos.subtitle}
+                </h4>
+
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.pos.desc}
+                </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <span className="mini-tag">FastAPI</span>
+                  <span className="mini-tag">JavaScript</span>
+                  <span className="mini-tag">SQLite</span>
+                  <span className="mini-tag">HTML5 / CSS3</span>
+                  <span className="mini-tag">Python</span>
+                </div>
+
+                <div style={{ marginTop: '0.5rem' }}>
+                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>
+                    {t.projects.featuresLabel}
+                  </h5>
+                  <ul style={{ 
+                    listStyle: 'none', 
+                    display: 'grid', 
+                    gridTemplateColumns: '1fr',
+                    gap: '0.4rem',
+                    fontSize: '0.88rem',
+                    color: 'var(--color-text-secondary)'
+                  }} className="skills-list-grid">
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat1}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat2}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat3}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat4}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Image / Graphic Side */}
+              <div 
+                className="project-graphic-side pos-bg"
+                style={{
+                  backgroundImage: `url(${pnsScreenshot})`,
+                }}
+              >
+                <div className="pos-overlay">
+                  <Monitor size={48} className="pos-icon-glow" />
+                  <span className="pos-platform-badge">FASTAPI & VANILLA JS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJECT 3: LIA 2 @ ORBISLINKS */}
           <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
             <div className="project-grid">
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span className="tag tag-accent">{t.projects.lia.tagLia}</span>
+                  <span className="tag">{t.projects.lia.tagFullstack}</span>
+                  <span className="tag">{t.projects.lia.tagAi}</span>
+                </div>
+
+                <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
+                  {t.projects.lia.title}
+                </h3>
+
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
+                  {t.projects.roleLabel}{t.projects.lia.role}
+                </h4>
+
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.lia.desc1}
+                </p>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.lia.desc2}
+                </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                  <span className="mini-tag">Flask</span>
+                  <span className="mini-tag">React</span>
+                  <span className="mini-tag">MySQL</span>
+                  <span className="mini-tag">Docker</span>
+                  <span className="mini-tag">Celery</span>
+                  <span className="mini-tag">Alembic</span>
+                  <span className="mini-tag">WSL/Linux</span>
+                  <span className="mini-tag">RAG / LLMs</span>
+                </div>
+
+                <div style={{ marginTop: '0.5rem' }}>
+                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                    {t.projects.responsibilitiesLabel}
+                  </h5>
+                  <ul style={{ 
+                    listStyle: 'none', 
+                    display: 'grid', 
+                    gridTemplateColumns: '1fr',
+                    gap: '0.5rem',
+                    fontSize: '0.9rem',
+                    color: 'var(--color-text-secondary)'
+                  }} className="skills-list-grid">
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp1}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp2}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp3}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia.resp4}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Image / Graphic Side */}
+              <div className="project-graphic-side lia-bg">
+                <div className="lia-overlay">
+                  <Server size={48} className="lia-icon-glow" />
+                  <span className="lia-badge">FLASK, MYSQL & RAG</span>
+                  <div className="lia-console">
+                    <div>$ python chatbot.py --rag</div>
+                    <div>&gt; Loading Swedavia API scraper... [OK]</div>
+                    <div>&gt; Loading Aena API scraper... [OK]</div>
+                    <div>&gt; Initializing Flask B2P2P MVP... [OK]</div>
+                    <div>&gt; Initializing feedback RAG analyzer... [OK]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJECT 4: EXAMENSARBETE (THESIS) */}
+          <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
+            <div className="project-grid">
+              {/* Content Side */}
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   <span className="tag tag-accent">{t.projects.rag.tagThesis}</span>
                   <span className="tag">{t.projects.rag.tagAi}</span>
@@ -477,75 +441,111 @@ export default function Projects() {
             </div>
           </div>
 
-          {/* PROJECT 5: PNS-FREE */}
+          {/* PROJECT 5: LIA 1 @ NORTHHACK MEDIA */}
           <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
             <div className="project-grid">
               {/* Content Side */}
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">{t.projects.pos.tagFullstack}</span>
-                  <span className="tag">{t.projects.pos.tagCross}</span>
-                  <span className="tag">{t.projects.pos.tagPos}</span>
+                  <span className="tag tag-accent">{t.projects.lia1.tagLia}</span>
+                  <span className="tag">{t.projects.lia1.tagDev}</span>
+                  <span className="tag">{t.projects.lia1.tagNet}</span>
                 </div>
 
                 <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
-                  {t.projects.pos.title}
+                  {t.projects.lia1.title}
                 </h3>
-                
+
                 <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
-                  {t.projects.pos.subtitle}
+                  {t.projects.roleLabel}{t.projects.lia1.role}
                 </h4>
 
                 <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  {t.projects.pos.desc}
+                  {t.projects.lia1.desc1}
+                </p>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.lia1.desc2}
                 </p>
 
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <span className="mini-tag">FastAPI</span>
-                  <span className="mini-tag">JavaScript</span>
-                  <span className="mini-tag">SQLite</span>
-                  <span className="mini-tag">HTML5 / CSS3</span>
-                  <span className="mini-tag">Python</span>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                  <span className="mini-tag">Unity</span>
+                  <span className="mini-tag">C#</span>
+                  <span className="mini-tag">Nätverkssynk</span>
+                  <span className="mini-tag">Git / GitHub</span>
+                  <span className="mini-tag">Trådsäkerhet</span>
                 </div>
 
                 <div style={{ marginTop: '0.5rem' }}>
-                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--color-text-primary)' }}>
-                    {t.projects.featuresLabel}
+                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                    {t.projects.responsibilitiesLabel}
                   </h5>
                   <ul style={{ 
                     listStyle: 'none', 
                     display: 'grid', 
                     gridTemplateColumns: '1fr',
-                    gap: '0.4rem',
-                    fontSize: '0.88rem',
+                    gap: '0.5rem',
+                    fontSize: '0.9rem',
                     color: 'var(--color-text-secondary)'
                   }} className="skills-list-grid">
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat1}
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp1}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat2}
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp2}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat3}
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp3}
                     </li>
                     <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle2 size={13} color="var(--color-primary)" /> {t.projects.pos.feat4}
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.lia1.resp4}
                     </li>
                   </ul>
+                </div>
+
+                <div style={{ marginTop: '0.75rem' }}>
+                  <a 
+                    href="https://www.northhackmedia.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.65rem 1.35rem',
+                      fontSize: '0.92rem',
+                      textDecoration: 'none',
+                      width: 'fit-content'
+                    }}
+                  >
+                    <ExternalLink size={16} />
+                    {t.projects.game.studioBtn}
+                  </a>
                 </div>
               </div>
 
               {/* Image / Graphic Side */}
               <div 
-                className="project-graphic-side pos-bg"
+                className="project-graphic-side game-bg"
                 style={{
-                  backgroundImage: `url(${pnsScreenshot})`,
+                  backgroundImage: `url(${oxideBg})`,
+                  backgroundSize: '75%',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  backgroundColor: '#000000',
                 }}
               >
-                <div className="pos-overlay">
-                  <Monitor size={48} className="pos-icon-glow" />
-                  <span className="pos-platform-badge">FASTAPI & VANILLA JS</span>
+                <div className="game-overlay" style={{
+                  position: 'absolute',
+                  bottom: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  zIndex: 2
+                }}>
+                  <Gamepad2 size={36} className="game-icon-glow" style={{ color: 'var(--color-primary)' }} />
+                  <span className="game-status-badge" style={{ borderColor: 'rgba(99, 102, 241, 0.4)', color: '#a5b4fc', background: '#030712', marginTop: 0 }}>UNITY & C#</span>
                 </div>
               </div>
             </div>
@@ -597,7 +597,7 @@ export default function Projects() {
         @media (min-width: 992px) {
           .lia-bg {
             border-top: none;
-            border-right: 1px solid var(--border-color);
+            border-left: 1px solid var(--border-color);
           }
         }
 
