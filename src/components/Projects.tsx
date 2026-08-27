@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, Database } from 'lucide-react';
+import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import pnsScreenshot from '../assets/pns_screenshot.png';
 import nfrScreenshot from '../assets/nfr_screenshot.png';
@@ -188,6 +188,27 @@ export default function Projects() {
                     </li>
                   </ul>
                 </div>
+
+                <div style={{ marginTop: '0.75rem' }}>
+                  <a 
+                    href="https://www.northhackmedia.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.65rem 1.35rem',
+                      fontSize: '0.92rem',
+                      textDecoration: 'none',
+                      width: 'fit-content'
+                    }}
+                  >
+                    <ExternalLink size={16} />
+                    {t.projects.game.studioBtn}
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -198,7 +219,8 @@ export default function Projects() {
               {/* Content Side */}
               <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }} className="order-content">
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  <span className="tag tag-accent">{t.projects.game.tagSpel}</span>
+                  <span className="tag tag-accent">{t.projects.game.tagSteam}</span>
+                  <span className="tag">{t.projects.game.tagSpel}</span>
                   <span className="tag">{t.projects.game.tagStudio}</span>
                   <span className="tag">{t.projects.game.tagGroup}</span>
                 </div>
@@ -252,6 +274,45 @@ export default function Projects() {
                     </li>
                   </ul>
                 </div>
+
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
+                  <a 
+                    href="https://store.steampowered.com/app/4341610/No_Final_Run/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.65rem 1.35rem',
+                      fontSize: '0.92rem',
+                      textDecoration: 'none',
+                      width: 'fit-content'
+                    }}
+                  >
+                    <ExternalLink size={16} />
+                    {t.projects.game.steamBtn}
+                  </a>
+                  <a 
+                    href="https://www.northhackmedia.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.6rem',
+                      padding: '0.65rem 1.35rem',
+                      fontSize: '0.92rem',
+                      textDecoration: 'none',
+                      width: 'fit-content'
+                    }}
+                  >
+                    <ExternalLink size={16} />
+                    {t.projects.game.studioBtn}
+                  </a>
+                </div>
               </div>
 
               {/* Image / Graphic Side */}
@@ -263,7 +324,9 @@ export default function Projects() {
               >
                 <div className="game-overlay">
                   <Gamepad2 size={48} className="game-icon-glow" />
-                  <span className="game-status-badge">{t.projects.statusDeveloping}</span>
+                  <span className="game-status-badge" style={{ borderColor: 'rgba(16, 185, 129, 0.4)', color: '#34d399', background: '#030712' }}>
+                    {t.projects.game.tagSteam}
+                  </span>
                 </div>
               </div>
             </div>
