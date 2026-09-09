@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Gamepad2, BrainCircuit, Monitor, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink, X, Maximize2 } from 'lucide-react';
+import { Gamepad2, BrainCircuit, TabletSmartphone, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink, X, Maximize2 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import pnsScreenshot from '../assets/pns_screenshot.png';
 import nfrCover from '../assets/nfr_cover.jpg';
@@ -266,8 +266,8 @@ export default function Projects() {
                 }}
               >
                 <div className="pos-overlay">
-                  <Monitor size={48} className="pos-icon-glow" />
-                  <span className="pos-platform-badge">FASTAPI & VANILLA JS</span>
+                  <TabletSmartphone size={48} className="pos-icon-glow" />
+                  <span className="pos-platform-badge">FASTAPI & TOUCH WEB APP</span>
                 </div>
               </div>
             </div>

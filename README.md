@@ -23,7 +23,7 @@ A modern, responsive portfolio website built with **React**, **TypeScript**, and
   - **LIA 1 (Game Dev @ Northhack Media)**: Unity/C# network synchronization, projectile systems, and thread safety.
   - **No Final Run**: Game direction, mechanics design, and project leadership.
   - **Multimodal RAG for POS Systems**: Interactive architectural comparison (Local Open Source vs. Azure Enterprise Cloud).
-  - **PNS**: Web-based POS system with FastAPI and SQLite.
+  - **PNS**: Touch-optimized POS web application (tablets & mobile) with FastAPI and SQLite.
 - **Interactive Competence Modal**: Category-filtered breakdown of skills, frameworks, tools, and methodologies.
 - **Contact Form**: Functional, secure client-side form dispatching emails via Web3Forms.
 
