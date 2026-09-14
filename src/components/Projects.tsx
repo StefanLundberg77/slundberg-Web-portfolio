@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Gamepad2, BrainCircuit, TabletSmartphone, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink, X, Maximize2 } from 'lucide-react';
+import { Gamepad2, BrainCircuit, TabletSmartphone, CheckCircle2, Server, Cloud, Camera, Database, ExternalLink, X, Maximize2, Search, Code } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import pnsScreenshot from '../assets/pns_screenshot.png';
 import nfrCover from '../assets/nfr_cover.jpg';
@@ -349,6 +349,104 @@ export default function Projects() {
                     <div>&gt; Loading Aena API scraper... [OK]</div>
                     <div>&gt; Initializing Flask B2P2P MVP... [OK]</div>
                     <div>&gt; Initializing feedback RAG analyzer... [OK]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* PROJECT: JOBSCOPE */}
+          <div className="card project-card-large" style={{ padding: '0', overflow: 'hidden' }}>
+            <div className="project-grid">
+              {/* Content Side */}
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  <span className="tag tag-accent">{t.projects.jobscope.tagScope}</span>
+                  <span className="tag">{t.projects.jobscope.tagApi}</span>
+                  <span className="tag">{t.projects.jobscope.tagNext}</span>
+                </div>
+
+                <h3 style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
+                  {t.projects.jobscope.title}
+                </h3>
+
+                <h4 style={{ fontSize: '1.05rem', color: 'var(--color-accent)', fontWeight: 600 }}>
+                  {t.projects.roleLabel}{t.projects.jobscope.role}
+                </h4>
+
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.jobscope.desc1}
+                </p>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {t.projects.jobscope.desc2}
+                </p>
+
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                  <span className="mini-tag">Next.js 16</span>
+                  <span className="mini-tag">React 19</span>
+                  <span className="mini-tag">TypeScript</span>
+                  <span className="mini-tag">Prisma 7</span>
+                  <span className="mini-tag">SQLite</span>
+                  <span className="mini-tag">JobTech API</span>
+                  <span className="mini-tag">Gemini AI</span>
+                  <span className="mini-tag">Tailwind CSS</span>
+                </div>
+
+                <div style={{ marginTop: '0.5rem' }}>
+                  <h5 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.75rem', color: 'var(--color-text-primary)' }}>
+                    {t.projects.responsibilitiesLabel}
+                  </h5>
+                  <ul style={{ 
+                    listStyle: 'none', 
+                    display: 'grid', 
+                    gridTemplateColumns: '1fr',
+                    gap: '0.5rem',
+                    fontSize: '0.9rem',
+                    color: 'var(--color-text-secondary)'
+                  }} className="skills-list-grid">
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.jobscope.resp1}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.jobscope.resp2}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.jobscope.resp3}
+                    </li>
+                    <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <CheckCircle2 size={14} color="var(--color-accent)" /> {t.projects.jobscope.resp4}
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Action Buttons */}
+                <div style={{ display: 'flex', gap: '1rem', marginTop: '0.75rem', flexWrap: 'wrap' }}>
+                  <a
+                    href="https://github.com/StefanLundberg77/JobScope"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}
+                  >
+                    <Code size={16} />
+                    {t.projects.jobscope.githubBtn}
+                  </a>
+                </div>
+              </div>
+
+              {/* Graphic / Console Side */}
+              <div className="project-graphic-side" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '2rem', background: 'radial-gradient(circle at center, rgba(59, 130, 246, 0.15), transparent 70%)' }}>
+                <div style={{ textAlign: 'center', maxWidth: '340px' }}>
+                  <Search size={48} color="var(--color-primary)" style={{ marginBottom: '1rem' }} />
+                  <div style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.1em', color: 'var(--color-accent)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
+                    JOBTECH API & GEMINI AI
+                  </div>
+                  <div className="lia-console" style={{ textAlign: 'left', fontFamily: 'monospace', fontSize: '0.8rem', background: 'rgba(0,0,0,0.6)', padding: '1.25rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.1)', lineHeight: '1.5' }}>
+                    <div style={{ color: '#10b981' }}>$ jobscope --stream-jobtech</div>
+                    <div style={{ color: '#94a3b8' }}>&gt; Ingesting Arbetsförmedlingen API... [OK]</div>
+                    <div style={{ color: '#94a3b8' }}>&gt; Extracting ATS requirement profile... [OK]</div>
+                    <div style={{ color: '#94a3b8' }}>&gt; Semantic skill matching (Gemini)... [OK]</div>
+                    <div style={{ color: '#60a5fa' }}>&gt; Match: 94% • 0 Hallucinations verified</div>
                   </div>
                 </div>
               </div>

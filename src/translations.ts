@@ -112,6 +112,20 @@ export const translations = {
         feat2: 'Produktkatalog med kategorier och prissättning',
         feat3: 'Lokal datalagring med SQLite-databas',
         feat4: 'Optimerad för surfplatta och mobil (iOS & Android)',
+      },
+      jobscope: {
+        tagScope: 'Fullstack & AI',
+        tagApi: 'JobTech API',
+        tagNext: 'Next.js 16 / Prisma',
+        title: 'JobScope: Plattform för Kravprofilsanalys',
+        role: 'Fullstack- & AI-utvecklare',
+        desc1: 'JobScope är en modern webbapplikation utvecklad för intelligent bevakning och analys av den svenska IT-arbetsmarknaden. Plattformen ansluter direkt mot Arbetsförmedlingens öppna JobTech Dev API för att i realtid hämta, filtrera och analysera relevanta tech-annonser.',
+        desc2: 'Genom lokala databaser och LLM-analys (Google Gemini) extraheras och struktureras komplexa kravprofiler från ostrukturerad text, identifierar kompetensgap och hjälper utvecklare att matcha sina verkliga meriter mot marknadens efterfrågan.',
+        resp1: 'Fullstack-arkitektur med Next.js 16 (App Router, Server Actions) och React 19',
+        resp2: 'Databasdesign med SQLite, Prisma 7 ORM och lokal dataintegritet',
+        resp3: 'Automatiserad integration mot Arbetsförmedlingens öppna JobTech Search API',
+        resp4: 'LLM-baserad kravprofilsanalys och matchningslogik med strikta anti-hallucinationsregler',
+        githubBtn: 'Källkod på GitHub',
       }
     },
     skills: {
@@ -269,6 +283,20 @@ export const translations = {
         feat2: 'Product catalog with categories and pricing',
         feat3: 'Local data storage with SQLite database',
         feat4: 'Optimized for tablets & smartphones (iOS & Android)',
+      },
+      jobscope: {
+        tagScope: 'Fullstack & AI',
+        tagApi: 'JobTech API',
+        tagNext: 'Next.js 16 / Prisma',
+        title: 'JobScope: Job Market & Requirement Analytics',
+        role: 'Fullstack & AI Developer',
+        desc1: 'JobScope is a modern web application built for intelligent surveillance and semantic analysis of the tech job market. It connects directly to the Swedish Public Employment Service (JobTech Dev API) to monitor and filter IT opportunities in real-time.',
+        desc2: 'Leveraging local database architecture and LLM reasoning (Google Gemini), it extracts structured technical requirement profiles from unstructured job postings, detects skill gaps, and maps developer competencies against market demand.',
+        resp1: 'Fullstack architecture with Next.js 16 (App Router, Server Actions) and React 19',
+        resp2: 'Database schema with SQLite and Prisma 7 ORM prioritizing local data privacy',
+        resp3: 'Automated data ingestion from the official JobTech Dev Search API',
+        resp4: 'Semantic requirement extraction and skill-mapping algorithms with anti-hallucination guardrails',
+        githubBtn: 'View Code on GitHub',
       }
     },
     skills: {
