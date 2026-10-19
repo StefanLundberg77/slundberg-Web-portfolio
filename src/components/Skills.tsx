@@ -52,6 +52,7 @@ export default function Skills() {
       skills: [
         'Python',
         'C# / .NET',
+        'ASP.NET Core',
         'TypeScript / JavaScript',
         'FastAPI',
         'React',
@@ -116,11 +117,12 @@ export default function Skills() {
       desc: t.skills.modal.devDesc,
       groups: {
         languages: ['C#', 'Python', 'SQL (SQLite, MySQL, SQL Server)', 'TypeScript', 'JavaScript'],
-        libraries: ['.NET Core / .NET 8', 'React', 'Flask', 'FastAPI', 'Dapper', 'Alembic (Migrationer)'],
+        libraries: ['.NET Core / .NET 8', 'ASP.NET Core', 'React', 'Flask', 'FastAPI', 'Dapper', 'Alembic (Migrationer)'],
         tools: ['Visual Studio', 'Visual Studio Code', 'Spyder', 'Node.js / NPM', 'DBeaver', 'SSMS', 'Git'],
         concepts: language === 'sv' ? [
           'Objektorienterad programmering (OOP)',
           'Systemarkitektur',
+          'Enhetstestning (Unit Testing)',
           'RESTful API Design',
           'Databasmigreringar',
           'Ren kod & Refaktorering (Clean Code)',
@@ -128,6 +130,7 @@ export default function Skills() {
         ] : [
           'Object-Oriented Programming (OOP)',
           'System Architecture',
+          'Unit Testing & TDD',
           'RESTful API Design',
           'Database Migrations',
           'Clean Code & Refactoring',
